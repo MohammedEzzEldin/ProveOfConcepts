@@ -5725,11 +5725,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.BL\\POVs.BL.csproj",
+      "projectUniqueName": "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.BL\\POVs.BL.csproj",
       "projectName": "POVs.BL",
-      "projectPath": "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.BL\\POVs.BL.csproj",
+      "projectPath": "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.BL\\POVs.BL.csproj",
       "packagesPath": "C:\\Users\\M Ezz\\.nuget\\packages\\",
-      "outputPath": "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.BL\\obj\\",
+      "outputPath": "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.BL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\M Ezz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5746,8 +5746,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj": {
-              "projectPath": "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj"
+            "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj": {
+              "projectPath": "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj"
             }
           }
         }

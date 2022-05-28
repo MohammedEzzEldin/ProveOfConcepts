@@ -5802,11 +5802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj",
+      "projectUniqueName": "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj",
       "projectName": "POVs.DAL",
-      "projectPath": "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj",
+      "projectPath": "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.DAL\\POVs.DAL.csproj",
       "packagesPath": "C:\\Users\\M Ezz\\.nuget\\packages\\",
-      "outputPath": "F:\\Development\\My Projects\\Dot Net Projects\\ProveOfConcepts DotCore Project\\ProveOfConcepts\\POVs.DAL\\obj\\",
+      "outputPath": "F:\\Development\\My Projects\\Dot Net Projects\\Dot Net Core Projects\\ProveOfConcepts\\ProveOfConcepts\\POVs.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\M Ezz\\AppData\\Roaming\\NuGet\\NuGet.Config",
