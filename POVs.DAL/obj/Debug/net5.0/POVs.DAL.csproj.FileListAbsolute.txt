@@ -4,7 +4,6 @@ F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcept
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.DAL\bin\Debug\net5.0\POVs.DAL.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.DAL\bin\Debug\net5.0\ref\POVs.DAL.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.DAL\bin\Debug\net5.0\POVs.DAL.pdb
-F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.DAL\obj\Debug\net5.0\POVs.DAL.csproj.AssemblyReference.cache
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.DAL\obj\Debug\net5.0\POVs.DAL.GeneratedMSBuildEditorConfig.editorconfig
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.DAL\obj\Debug\net5.0\POVs.DAL.AssemblyInfoInputs.cache
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.DAL\obj\Debug\net5.0\POVs.DAL.AssemblyInfo.cs

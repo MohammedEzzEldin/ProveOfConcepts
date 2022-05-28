@@ -58,9 +58,7 @@ F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcept
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.TagHelpers.output.cache
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.RazorCoreGenerate.cache
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.RazorTargetAssemblyInfo.cache
