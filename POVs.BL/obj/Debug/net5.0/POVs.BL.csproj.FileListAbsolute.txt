@@ -1,0 +1,15 @@
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\bin\Debug\net5.0\POVs.BL.deps.json
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\bin\Debug\net5.0\POVs.BL.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\bin\Debug\net5.0\ref\POVs.BL.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\bin\Debug\net5.0\POVs.BL.pdb
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\bin\Debug\net5.0\POVs.DAL.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\bin\Debug\net5.0\POVs.DAL.pdb
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.csproj.AssemblyReference.cache
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.GeneratedMSBuildEditorConfig.editorconfig
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.AssemblyInfoInputs.cache
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.AssemblyInfo.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.csproj.CoreCompileInputs.cache
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.csproj.CopyComplete
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\ref\POVs.BL.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.BL\obj\Debug\net5.0\POVs.BL.pdb
