@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using POVs.BL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace POVs.PR.Controllers
     public class DepartmentController : Controller
     {
         #region Explaination
-        
+
         #region ViewData
         // View Data: => like var, ref type , need to cast 
         /* 
@@ -18,7 +19,7 @@ namespace POVs.PR.Controllers
              * ViewData["x"] => store as object
         */
         #endregion
-        
+
         #region ViewBag
         // View Bag => like dynamic , did not need to cast (Controller to Action)
         /*
@@ -28,7 +29,7 @@ namespace POVs.PR.Controllers
              * ViewBag is better that ViewData in the performance
          */
         #endregion
-        
+
         #region TempData
         // Temp Data => need to cast 
         /*
@@ -50,13 +51,18 @@ namespace POVs.PR.Controllers
         #region Notes
         // @inject is the alternative for ViewModel to call more than one Model inside the view
         #endregion
-        public IActionResult Index()
+
+        DepartmentRep department = new DepartmentRep();
+        
+        public async Task<IActionResult> Index()
         {
             //ViewData["x"] = "Hi I'm View Data";
             //ViewBag.y = "Hi I'm View Bag";
             //TempData["z"] = "Hi I'm Temp Data";
             //return RedirectToAction("Test", "Department");
-            return View();
+            var data = await department.GetAsync();
+
+            return View(data);
         }
         public IActionResult Test()
         {
