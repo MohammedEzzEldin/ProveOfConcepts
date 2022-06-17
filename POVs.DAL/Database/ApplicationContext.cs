@@ -1,11 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using POVs.DAL.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace POVs.DAL.Database
 {
@@ -13,7 +7,7 @@ namespace POVs.DAL.Database
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer()
+            optionsBuilder.UseSqlServer("Server = .; Database = ProveOfConceptsDb; Integrated Security = true");
             base.OnConfiguring(optionsBuilder);
         }
         public DbSet<Department> Department { get; set; }

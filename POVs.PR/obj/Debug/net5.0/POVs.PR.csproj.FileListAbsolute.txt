@@ -69,3 +69,7 @@ F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcept
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\ref\POVs.PR.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.pdb
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.genruntimeconfig.cache
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Department\Index.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Department\Test.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Humanizer.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
