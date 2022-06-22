@@ -8,7 +8,31 @@
 <br />
 
 @*<center>
-    <h2>@ViewData["x"]</h2>
-    <h2>@ViewBag.y</h2>
-    <h2>@TempData["z"]</h2>
-</center>*@
+        <h2>@ViewData["x"]</h2>
+        <h2>@ViewBag.y</h2>
+        <h2>@TempData["z"]</h2>
+    </center>*@
+
+<a class="btn btn-primary" asp-controller="Department" asp-action="Create">Create</a>
+
+<br />
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Name</td>
+                <td>@item.Code</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using POVs.BL.ModelView;
 using POVs.BL.Repository;
 using System;
 using System.Collections.Generic;
@@ -53,7 +54,7 @@ namespace POVs.PR.Controllers
         #endregion
 
         DepartmentRep department = new DepartmentRep();
-        
+
         public async Task<IActionResult> Index()
         {
             //ViewData["x"] = "Hi I'm View Data";
@@ -67,6 +68,25 @@ namespace POVs.PR.Controllers
         public IActionResult Test()
         {
             return View();
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(DepartmentVM dep)
+        {
+            try
+            {
+                await department.CreateAsync(dep);
+                return RedirectToAction("Index");
+            }
+            catch(Exception ex)
+            {
+                TempData["error"] = ex.Message;
+            }
+            ModelState.Clear();
+            return View(dep);
         }
     }
 }
