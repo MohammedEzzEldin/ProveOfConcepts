@@ -78,14 +78,17 @@ namespace POVs.PR.Controllers
         {
             try
             {
-                await department.CreateAsync(dep);
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    await department.CreateAsync(dep);
+                    return RedirectToAction("Index");
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 TempData["error"] = ex.Message;
             }
-            ModelState.Clear();
+            //ModelState.Clear();
             return View(dep);
         }
     }

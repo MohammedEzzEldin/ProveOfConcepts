@@ -10,14 +10,21 @@
 <form asp-controller="Department" asp-action="Create" class="form-group">
     <label for="Name">Department Name</label>
     <input type="text" asp-for="Name" class="form-control" />
-
+    <span asp-validation-for="Name" class="text-danger"></span>
     <br />
 
     <label for="Code">Department Code</label>
     <input type="text" asp-for="Code" class="form-control" />
+    <span asp-validation-for="Code" class="text-danger"></span>
     <br />
     <center>
         <input type="submit" class="btn btn-primary text-center" value="Save" />
         <input type="reset" class="btn btn-danger text-center" value="Cancel" />
     </center>
 </form>
+
+
+@section JqueryValidation{
+<script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+<script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
