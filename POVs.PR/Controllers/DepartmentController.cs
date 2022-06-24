@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using POVs.BL.Interface;
 using POVs.BL.ModelView;
-using POVs.BL.Repository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace POVs.PR.Controllers
@@ -53,8 +51,12 @@ namespace POVs.PR.Controllers
         // @inject is the alternative for ViewModel to call more than one Model inside the view
         #endregion
 
-        DepartmentRep department = new DepartmentRep();
-
+       //private readonly DepartmentRep department;// tightly coupled
+        private readonly IDepartmentRep department;// loosly coupled
+        public DepartmentController(IDepartmentRep department)
+        {
+            this.department = department;
+        }
         public async Task<IActionResult> Index()
         {
             //ViewData["x"] = "Hi I'm View Data";

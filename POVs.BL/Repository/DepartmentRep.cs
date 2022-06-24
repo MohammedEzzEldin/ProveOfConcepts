@@ -10,8 +10,11 @@ namespace POVs.BL.Repository
 {
     public class DepartmentRep : IDepartmentRep
     {
-        ApplicationContext db = new ApplicationContext();
-
+        private readonly ApplicationContext db;
+        public DepartmentRep(ApplicationContext db)
+        {
+            this.db = db;
+        }
         public async Task CreateAsync(DepartmentVM department)
         {
             Department _department = new Department()

@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using POVs.BL.Interface;
+using POVs.BL.Repository;
+using POVs.DAL.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +28,14 @@ namespace POVs.PR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //connection string
+            var con = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<ApplicationContext>(option => option.UseSqlServer(con));
+
+            services.AddScoped<IDepartmentRep,DepartmentRep>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +51,7 @@ namespace POVs.PR
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
