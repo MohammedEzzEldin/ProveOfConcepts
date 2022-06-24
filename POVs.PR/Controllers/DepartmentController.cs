@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using POVs.BL.Interface;
 using POVs.BL.ModelView;
+using POVs.DAL.Entity;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace POVs.PR.Controllers
@@ -53,9 +56,12 @@ namespace POVs.PR.Controllers
 
        //private readonly DepartmentRep department;// tightly coupled
         private readonly IDepartmentRep department;// loosly coupled
-        public DepartmentController(IDepartmentRep department)
+        private readonly IMapper mapper;
+
+        public DepartmentController(IDepartmentRep department, IMapper mapper)
         {
             this.department = department;
+            this.mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
@@ -64,15 +70,14 @@ namespace POVs.PR.Controllers
             //TempData["z"] = "Hi I'm Temp Data";
             //return RedirectToAction("Test", "Department");
             var data = await department.GetAsync();
-
-            return View(data);
+            var result = mapper.Map<IEnumerable<DepartmentVM>>(data);
+            return View(result);
         }
         public async Task<IActionResult> Details(int id)
         {
-
             var data = await department.GetByIdAsync(id);
-
-            return View(data);
+            var result = mapper.Map<DepartmentVM>(data);
+            return View(result);
         }
         public IActionResult Test()
         {
@@ -89,7 +94,8 @@ namespace POVs.PR.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    await department.CreateAsync(dep);
+                    var data = mapper.Map<Department>(dep);
+                    await department.CreateAsync(data);
                     return RedirectToAction("Index");
                 }
             }
@@ -103,8 +109,9 @@ namespace POVs.PR.Controllers
         public async Task<IActionResult> Update(int id)
         {
             var data = await department.GetByIdAsync(id);
+            var result = mapper.Map<DepartmentVM>(data);
 
-            return View(data);
+            return View(result);
         }
         [HttpPost]
         public async Task<IActionResult> Update(DepartmentVM dep)
@@ -113,7 +120,8 @@ namespace POVs.PR.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    await department.UpdateAsync(dep);
+                    var data = mapper.Map<Department>(dep);
+                    await department.UpdateAsync(data);
                     return RedirectToAction("Index");
                 }
             }
@@ -127,8 +135,9 @@ namespace POVs.PR.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var data = await department.GetByIdAsync(id);
+            var result = mapper.Map<DepartmentVM>(data);
 
-            return View(data);
+            return View(result);
         }
         [HttpPost]
         [ActionName("Delete")]

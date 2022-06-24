@@ -1,4 +1,5 @@
-﻿using POVs.BL.Interface;
+﻿using Microsoft.EntityFrameworkCore;
+using POVs.BL.Interface;
 using POVs.BL.ModelView;
 using POVs.DAL.Database;
 using POVs.DAL.Entity;
@@ -15,14 +16,9 @@ namespace POVs.BL.Repository
         {
             this.db = db;
         }
-        public async Task CreateAsync(DepartmentVM department)
+        public async Task CreateAsync(Department department)
         {
-            Department _department = new Department()
-            {
-                Name = department.Name,
-                Code = department.Code
-            };
-           await db.Department.AddAsync(_department);
+           await db.Department.AddAsync(department);
            await db.SaveChangesAsync();
         }
 
@@ -33,36 +29,23 @@ namespace POVs.BL.Repository
             await db.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<DepartmentVM>> GetAsync()
+        public async Task<IEnumerable<Department>> GetAsync()
         {
-            var data = db.Department.Select(x => new DepartmentVM()
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Code = x.Code
-            }).ToList();
+            var data = db.Department.ToList();
 
             return await Task.Run(() =>  data);
         }
 
-        public async Task<DepartmentVM> GetByIdAsync(int id)
+        public async Task<Department> GetByIdAsync(int id)
         {
-            var data = db.Department.Where(x => x.Id == id).Select(x => new DepartmentVM()
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Code = x.Code
-            }).FirstOrDefault();
+            var data = db.Department.Where(x => x.Id == id).FirstOrDefault();
 
             return await Task.Run(() => data);
         }
 
-        public async Task UpdateAsync(DepartmentVM department)
+        public async Task UpdateAsync(Department department)
         {
-            var data = await db.Department.FindAsync(department.Id);
-            data.Name = department.Name;
-            data.Code = department.Code;
-            
+            db.Entry(department).State = EntityState.Modified;
             await db.SaveChangesAsync();
         }
     }

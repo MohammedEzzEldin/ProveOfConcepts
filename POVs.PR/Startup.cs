@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using POVs.BL.Interface;
+using POVs.BL.Mapper;
 using POVs.BL.Repository;
 using POVs.DAL.Database;
 using System;
@@ -32,6 +33,9 @@ namespace POVs.PR
             //connection string
             var con = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationContext>(option => option.UseSqlServer(con));
+
+            // Auto Mapper
+            services.AddAutoMapper(map => map.AddProfile(new DomainProfile()));
 
             services.AddScoped<IDepartmentRep,DepartmentRep>();
 
