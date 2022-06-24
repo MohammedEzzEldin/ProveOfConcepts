@@ -23,6 +23,13 @@ namespace POVs.BL.Repository
            await db.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(int departmentId)
+        {
+            var data = await db.Department.FindAsync(departmentId);
+            db.Remove(data);
+            await db.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<DepartmentVM>> GetAsync()
         {
             var data = db.Department.Select(x => new DepartmentVM()
@@ -47,5 +54,13 @@ namespace POVs.BL.Repository
             return await Task.Run(() => data);
         }
 
+        public async Task UpdateAsync(DepartmentVM department)
+        {
+            var data = await db.Department.FindAsync(department.Id);
+            data.Name = department.Name;
+            data.Code = department.Code;
+            
+            await db.SaveChangesAsync();
+        }
     }
 }

@@ -65,6 +65,13 @@ namespace POVs.PR.Controllers
 
             return View(data);
         }
+        public async Task<IActionResult> Details(int id)
+        {
+
+            var data = await department.GetByIdAsync(id);
+
+            return View(data);
+        }
         public IActionResult Test()
         {
             return View();
@@ -90,6 +97,55 @@ namespace POVs.PR.Controllers
             }
             //ModelState.Clear();
             return View(dep);
+        }
+        public async Task<IActionResult> Update(int id)
+        {
+            var data = await department.GetByIdAsync(id);
+
+            return View(data);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(DepartmentVM dep)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await department.UpdateAsync(dep);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.Message;
+            }
+            //ModelState.Clear();
+            return View(dep);
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            var data = await department.GetByIdAsync(id);
+
+            return View(data);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public async Task<IActionResult> ConfirmDelete(int id)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await department.DeleteAsync(id);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.Message;
+            }
+            //ModelState.Clear();
+            return RedirectToAction("Delete", new { id = id } );
         }
     }
 }

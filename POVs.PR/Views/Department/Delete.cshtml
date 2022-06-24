@@ -1,0 +1,35 @@
+﻿@model POVs.BL.ModelView.DepartmentVM
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h4>Delete : @Model.Name</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" readonly/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Code" class="control-label"></label>
+                <input asp-for="Code" class="form-control" readonly/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<center>
+    <a asp-controller="Department" asp-action="Index" class="btn btn-success">Back to List</a>
+    <a asp-controller="Department" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-warning">Update</a>
+</center>
+

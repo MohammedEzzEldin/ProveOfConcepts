@@ -9,5 +9,7 @@ namespace POVs.BL.Interface
         Task<IEnumerable<DepartmentVM>> GetAsync();
         Task<DepartmentVM> GetByIdAsync(int id);
         Task CreateAsync(DepartmentVM department);
+        Task UpdateAsync(DepartmentVM department);
+        Task DeleteAsync(int departmentId);
     }
 }
