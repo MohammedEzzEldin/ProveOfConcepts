@@ -15,6 +15,7 @@ namespace POVs.DAL.Database
         //    base.OnConfiguring(optionsBuilder);
         //}
         public DbSet<Department> Department { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
 
