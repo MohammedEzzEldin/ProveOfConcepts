@@ -38,6 +38,7 @@ namespace POVs.PR
             services.AddAutoMapper(map => map.AddProfile(new DomainProfile()));
 
             services.AddScoped<IDepartmentRep,DepartmentRep>();
+            services.AddScoped<IEmployeeRep,EmployeeRep>();
 
 
         }
