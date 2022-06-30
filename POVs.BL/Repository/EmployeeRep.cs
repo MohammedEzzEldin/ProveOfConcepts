@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using POVs.BL.Interface;
-using POVs.BL.ModelView;
 using POVs.DAL.Database;
 using POVs.DAL.Entity;
 using System;
@@ -39,11 +38,11 @@ namespace POVs.BL.Repository
                return await Task.Run(() => db.Employees.ToList());
         }
 
-        public async Task<Employee> GetByIdAsync(int id)
+        public async Task<Employee> GetByIdAsync(Expression<Func<Employee, bool>> filter)
         {
-            var data = db.Employees.Where(x => x.Id == id).FirstOrDefault();
+            var data = await Task.Run(() => db.Employees.Where(filter).FirstOrDefault());
 
-            return await Task.Run(() => data);
+            return data;
         }
 
         public async Task UpdateAsync(Employee employee)
