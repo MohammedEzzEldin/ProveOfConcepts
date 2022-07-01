@@ -1,12 +1,6 @@
 ﻿using AutoMapper;
-using POVs.BL.Models;
 using POVs.BL.ModelView;
 using POVs.DAL.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace POVs.BL.Mapper
 {

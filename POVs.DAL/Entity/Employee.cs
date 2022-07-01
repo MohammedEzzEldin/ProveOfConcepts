@@ -15,9 +15,9 @@ namespace POVs.DAL.Entity
         public string Address { get; set; }
         public string Notes { get; set; }
         public double? Salary { get; set; }
-        public DateTime? HireDate { get; set; }
-        public DateTime? DeleteDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public DateTime HireDate { get; set; }
+        public DateTime DeleteDate { get; set; }
+        public DateTime UpdateDate { get; set; }
         public bool IsDeleted { get; set; }
         public bool IsUpdated { get; set; }
         public bool IsActive { get; set; }

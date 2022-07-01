@@ -159,3 +159,8 @@ F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcept
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Employee\Create.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Employee\Delete.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Employee\Details.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Employee\Update.cshtml.g.cs

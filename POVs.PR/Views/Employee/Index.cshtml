@@ -1,0 +1,46 @@
+﻿@model IEnumerable<EmployeeVM>;
+@{
+    ViewData["Title"] = "Employee";
+}
+<h2>Welcome in Employee</h2>
+
+
+<br />
+
+<a class="btn btn-primary" asp-controller="Employee" asp-action="Create">Create</a>
+
+<br />
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Hire Date</th>
+            <th scope="col">Details</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.Name</td>
+            <td>@item.Salary</td>
+            <td>@item.HireDate</td>
+            <td>
+                <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+            </td>
+            <td>
+                <a asp-controller="Employee" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Update</a>
+            </td>
+            <td>
+                <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace POVs.BL.Models
+namespace POVs.BL.ModelView
 {
     public class EmployeeVM
     {
@@ -20,7 +20,7 @@ namespace POVs.BL.Models
         public string Email { get; set; }
         [
             RegularExpression(
-            "[1-9]{1-5}-[a-zA-Z]{1-10}-[1-9]{1-5}-[a-zA-Z]{1-10}-[1-9]{1-5}-[a-zA-Z]{1-10}", 
+            "[1-9]{1,5}-[a-zA-Z]{1,10}-[a-zA-Z]{1,10}-[a-zA-Z]{1,10}",
             ErrorMessage ="Enter like 12-streetname-City-Country"
            )
         ]
@@ -28,9 +28,9 @@ namespace POVs.BL.Models
         public string Notes { get; set; }
         [Range(2000,10000,ErrorMessage ="Salary btw 2k to 100k")]
         public double? Salary { get; set; }
-        public DateTime? HireDate { get; set; }
-        public DateTime? DeleteDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public DateTime HireDate { get; set; }
+        public DateTime DeleteDate { get; set; }
+        public DateTime UpdateDate { get; set; }
         public bool IsDeleted { get; set; }
         public bool IsUpdated { get; set; }
         public bool IsActive { get; set; }

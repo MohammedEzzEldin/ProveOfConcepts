@@ -15,6 +15,9 @@
     <!-- Bootstrap Core Css -->
     <link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
+    <!--bootstrap-select-->
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+
     <!-- Waves Effect Css -->
     <link href="~/plugins/node-waves/waves.css" rel="stylesheet" />
 
@@ -314,6 +317,17 @@
                         <ul class="ml-menu">
                             <li>
                                 <a asp-controller="Department" asp-action="Index">Departments</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">person</i>
+                            <span>Employee</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a asp-controller="Employee" asp-action="Index">Employees</a>
                             </li>
                         </ul>
                     </li>

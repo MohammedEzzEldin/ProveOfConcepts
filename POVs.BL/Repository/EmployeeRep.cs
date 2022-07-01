@@ -26,7 +26,9 @@ namespace POVs.BL.Repository
         public async Task DeleteAsync(int employeeId)
         {
             var data = await db.Employees.FindAsync(employeeId);
-            db.Remove(data);
+            //db.Remove(data);
+            data.IsDeleted = true;
+            data.DeleteDate = DateTime.Now;
             await db.SaveChangesAsync();
         }
 
@@ -47,6 +49,8 @@ namespace POVs.BL.Repository
 
         public async Task UpdateAsync(Employee employee)
         {
+            employee.IsUpdated = true;
+            employee.UpdateDate = DateTime.Now;
             db.Entry(employee).State = EntityState.Modified;
             await db.SaveChangesAsync();
         }

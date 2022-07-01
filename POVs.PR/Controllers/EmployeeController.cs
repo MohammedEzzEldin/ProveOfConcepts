@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using POVs.BL.Interface;
-using POVs.BL.Models;
 using POVs.BL.ModelView;
 using POVs.DAL.Entity;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace POVs.PR.Controllers
@@ -41,8 +40,10 @@ namespace POVs.PR.Controllers
             var result = mapper.Map<EmployeeVM>(data);
             return View(result);
         }
-        public IActionResult Create()
+
+        public async Task<IActionResult> Create()
         {
+            ViewBag.DepartmentsList = await GetDepartmentsListAsync();
             return View();
         }
         [HttpPost]
@@ -59,6 +60,7 @@ namespace POVs.PR.Controllers
             }
             catch (Exception ex)
             {
+                ViewBag.DepartmentsList = await GetDepartmentsListAsync();
                 TempData["error"] = ex.Message;
             }
             //ModelState.Clear();
@@ -116,10 +118,19 @@ namespace POVs.PR.Controllers
             //ModelState.Clear();
             return RedirectToAction("Delete", new { id = id });
         }
+    #endregion
+
+    #region NoActionMethods
+    [NonAction]
+    private async Task<SelectList> GetDepartmentsListAsync()
+    {
+        return new SelectList(await department.GetAsync(), "Id", "Name");
     }
     #endregion
 
     #region Ajax Call
 
     #endregion
+    }
+
 }
