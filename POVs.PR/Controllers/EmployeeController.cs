@@ -19,7 +19,7 @@ namespace POVs.PR.Controllers
         #endregion
 
         #region Ctor
-        public EmployeeController(IEmployeeRep employee, IMapper mapper,IDepartmentRep department)
+        public EmployeeController(IEmployeeRep employee, IMapper mapper, IDepartmentRep department)
         {
             this.employee = employee;
             this.mapper = mapper;
@@ -28,16 +28,27 @@ namespace POVs.PR.Controllers
         #endregion
 
         #region Actions
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchVal = null)
         {
-            var data = await employee.GetAsync(emp => emp.IsActive == true && emp.IsDeleted == false);
+            dynamic data;
+
+            if (searchVal != null)
+            {
+                data = await employee.SearchAsync(emp => emp.Name.Contains(searchVal) && emp.IsActive == true && emp.IsDeleted == false);
+            }
+            else
+            {
+                data = await employee.GetAsync(emp => emp.IsActive == true && emp.IsDeleted == false);
+            }                
             var result = mapper.Map<IEnumerable<EmployeeVM>>(data);
+
             return View(result);
         }
         public async Task<IActionResult> Details(int id)
         {
             var data = await employee.GetByIdAsync(emp => emp.Id == id && emp.IsActive == true && emp.IsDeleted == false);
             var result = mapper.Map<EmployeeVM>(data);
+            ViewBag.DepartmentsList = await GetDepartmentsListAsync(data.DepartmentId);
             return View(result);
         }
 
@@ -70,7 +81,7 @@ namespace POVs.PR.Controllers
         {
             var data = await employee.GetByIdAsync(emp => emp.Id == id && emp.IsDeleted == false);
             var result = mapper.Map<EmployeeVM>(data);
-
+            ViewBag.DepartmentsList = await GetDepartmentsListAsync(data.DepartmentId);
             return View(result);
         }
         [HttpPost]
@@ -88,6 +99,7 @@ namespace POVs.PR.Controllers
             catch (Exception ex)
             {
                 TempData["error"] = ex.Message;
+                ViewBag.DepartmentsList = await GetDepartmentsListAsync(emp.DepartmentId);
             }
             //ModelState.Clear();
             return View(emp);
@@ -96,6 +108,7 @@ namespace POVs.PR.Controllers
         {
             var data = await employee.GetByIdAsync(emp => emp.Id == id);
             var result = mapper.Map<EmployeeVM>(data);
+            ViewBag.DepartmentsList = await GetDepartmentsListAsync(data.DepartmentId);
 
             return View(result);
         }
@@ -114,23 +127,30 @@ namespace POVs.PR.Controllers
             catch (Exception ex)
             {
                 TempData["error"] = ex.Message;
+                var data = await employee.GetByIdAsync(emp => emp.Id == id);
+                ViewBag.DepartmentsList = await GetDepartmentsListAsync(data.DepartmentId);
             }
             //ModelState.Clear();
-            return RedirectToAction("Delete", new { id = id });
+            return RedirectToAction("Delete", new { id });
         }
-    #endregion
+        #endregion
 
-    #region NoActionMethods
-    [NonAction]
-    private async Task<SelectList> GetDepartmentsListAsync()
-    {
-        return new SelectList(await department.GetAsync(), "Id", "Name");
-    }
-    #endregion
+        #region NoActionMethods
+        [NonAction]
+        private async Task<SelectList> GetDepartmentsListAsync()
+        {
+            return new SelectList(await department.GetAsync(), "Id", "Name");
+        }
+        [NonAction]
+        private async Task<SelectList> GetDepartmentsListAsync(int DepartmentId)
+        {
+            return new SelectList(await department.GetAsync(), "Id", "Name", DepartmentId);
+        }
+        #endregion
 
-    #region Ajax Call
+        #region Ajax Call
 
-    #endregion
+        #endregion
     }
 
 }

@@ -1,0 +1,39 @@
+﻿@model EmployeeVM
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <label for="Name">Name</label>
+    <input type="text" asp-for="Name" class="form-control" readonly />
+    <br />
+
+    <label for="Salary">Salary</label>
+    <input type="text" asp-for="Salary" class="form-control" readonly />
+    <br />
+
+    <label for="HireDate">Hire Date</label>
+    <input type="text" asp-for="HireDate" class="form-control" readonly />
+    <br />
+
+
+    <label for="Email">Email</label>
+    <input type="text" asp-for="Email" class="form-control" readonly />
+    <br />
+
+
+    <label for="Address">Address</label>
+    <input type="text" asp-for="Address" class="form-control" readonly />
+    <br />
+
+
+    <label for="Notes">Notes</label>
+    <textarea rows="4" asp-for="Notes" class="form-control" readonly></textarea>
+    <br />
+
+
+    <label for="Department">Department</label>
+    <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentsList" disabled>
+        <option>Choose Department</option>
+    </select>
+    <br />
+    <br />
+</div>

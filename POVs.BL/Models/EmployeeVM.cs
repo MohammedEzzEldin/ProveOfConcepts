@@ -8,7 +8,7 @@ namespace POVs.BL.ModelView
     {
         public EmployeeVM()
         {
-            IsActive = true;
+            //IsActive = true;
             IsDeleted = false;
         }
         public int Id { get; set; }

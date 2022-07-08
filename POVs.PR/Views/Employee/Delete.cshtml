@@ -1,4 +1,4 @@
-﻿@model POVs.BL.ModelView.DepartmentVM
+﻿@model POVs.BL.ModelView.EmployeeVM
 
 @{
     ViewData["Title"] = "Delete";
@@ -13,14 +13,8 @@
         <form asp-action="Delete">
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" readonly/>
-            </div>
-            <div class="form-group">
-                <label asp-for="Code" class="control-label"></label>
-                <input asp-for="Code" class="form-control" readonly/>
-            </div>
+            @{ await Html.RenderPartialAsync("~/Views/Partials/Employee/DeleteDatails.cshtml"); }
+
             <div class="form-group">
                 <input type="submit" value="Delete" class="btn btn-danger" />
             </div>
@@ -29,7 +23,7 @@
 </div>
 
 <center>
-    <a asp-controller="Department" asp-action="Index" class="btn btn-success">Back to List</a>
-    <a asp-controller="Department" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-warning">Update</a>
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-success">Back to List</a>
+    <a asp-controller="Employee" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-warning">Update</a>
 </center>
 

@@ -8,6 +8,10 @@
       "files": [
         "jquery.validate.unobtrusive.min.js"
       ]
+    },
+    {
+      "library": "jqueryui@1.12.1",
+      "destination": "wwwroot/plugins/jqueryui/"
     }
   ]
 }

@@ -47,6 +47,12 @@ namespace POVs.BL.Repository
             return data;
         }
 
+        public async Task<IEnumerable<Employee>> SearchAsync(Expression<Func<Employee, bool>> filter)
+        {
+            var data =await db.Employees.Where(filter).Include("Department").ToListAsync();
+            return data;
+        }
+
         public async Task UpdateAsync(Employee employee)
         {
             employee.IsUpdated = true;
