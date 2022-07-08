@@ -35,14 +35,14 @@ namespace POVs.BL.Repository
         public async Task<IEnumerable<Employee>> GetAsync(Expression<Func<Employee, bool>> filter)
         {
             if(filter != null)
-               return await Task.Run(() => db.Employees.Where(filter).ToList());
+               return await Task.Run(() => db.Employees.Where(filter).Include("Department").ToList());
             else 
-               return await Task.Run(() => db.Employees.ToList());
+               return await Task.Run(() => db.Employees.Include("Department").ToList());
         }
 
         public async Task<Employee> GetByIdAsync(Expression<Func<Employee, bool>> filter)
         {
-            var data = await Task.Run(() => db.Employees.Where(filter).FirstOrDefault());
+            var data = await Task.Run(() => db.Employees.Where(filter).Include("Department").FirstOrDefault());
 
             return data;
         }
