@@ -14,10 +14,8 @@
 
     <!-- Bootstrap Core Css -->
     <link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!--bootstrap-select-->
-    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
-
+    @RenderSection("BootstrapSelectStyles", required: false);
+    @RenderSection("DataTableStyles", required: false);
     <!-- Waves Effect Css -->
     <link href="~/plugins/node-waves/waves.css" rel="stylesheet" />
 
@@ -499,13 +497,14 @@
 
     <!-- Jquery Core Js -->
     <script src="~/plugins/jquery/jquery.min.js"></script>
-    @await RenderSectionAsync("JqueryValidation", required: false)
+    @RenderSection("JqueryValidation", required: false)
 
     <!-- Bootstrap Core Js -->
     <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    @RenderSection("BootstrapSelectScript", required: false)
+    @RenderSection("DataTableScripts", required: false);
 
     <!-- Slimscroll Plugin Js -->
     <script src="~/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -539,7 +538,7 @@
 
     <!-- Demo Js -->
     <script src="~/js/demo.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

@@ -2,62 +2,127 @@
 @{
     ViewData["Title"] = "Employee";
 }
-<h2>Welcome in Employee</h2>
-
-
+@section BootstrapSelectStyles {
+    <!--bootstrap-select-->
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+}
+@section DataTableStyles {
+    <!--bootstrap-select-->
+    <link href="~/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+}
 <br />
 
 <a class="btn btn-primary" asp-controller="Employee" asp-action="Create">Create</a>
 
 <br />
 <br />
-<form asp-controller="Employee" asp-action="Index" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <input type="search" name="searchVal" class="form-control" />
+
+@*<form asp-controller="Employee" asp-action="Index">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <input type="search" name="searchVal" class="form-control" />
+                </div>
+                <div class="col-lg-4">
+                    <input type="submit" value="search" class="btn btn-success" />
+                </div>
             </div>
-            <div class="col-lg-4">
-                <input type="submit" value="search" class="btn btn-success" />
+        </div>
+    </form>
+    <br />*@
+
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>Welcome To Employee</h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Salary</th>
+                                    <th scope="col">Hire Date</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Details</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.Id</th>
+                                        <td>@item.Name</td>
+                                        <td>@item.Salary</td>
+                                        <td>@item.HireDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.Department.Name</td>
+                                        <td>
+                                            <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                                        </td>
+                                        <td>
+                                            <a asp-controller="Employee" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Update</a>
+                                        </td>
+                                        <td>
+                                            <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</form>
-<br />
-<br />
+</div>
 
-<table class="table table-hover table-striped table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Salary</th>
-            <th scope="col">Hire Date</th>
-            <th scope="col">Department</th>
-            <th scope="col">Details</th>
-            <th scope="col">Update</th>
-            <th scope="col">Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <th scope="row">@item.Id</th>
-                <td>@item.Name</td>
-                <td>@item.Salary</td>
-                <td>@item.HireDate.ToString("dd/MM/yyyy")</td>
-                <td>@item.Department.Name</td>
-                <td>
-                    <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-                </td>
-                <td>
-                    <a asp-controller="Employee" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Update</a>
-                </td>
-                <td>
-                    <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@section DataTableScripts{
+    <script src="~/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="~/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+    <script>
+
+        $(function () {
+            $('.js-basic-example').DataTable({
+                responsive: true,
+                paging: true,
+                pageLength: 5,
+                bSort: true,
+                bFilter: true,
+                //bLengthChange: false,
+                //bInfo: false,
+                //lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                lengthMenu: [[2, 5, 10, 25, 50], [2, 5, 10, 25, 50]],
+            });
+            var table = $('.js-basic-example').DataTable();
+
+            new $.fn.dataTable.Buttons(table, { buttons: ['copy', 'excel', 'pdf', 'csv', 'print'] });
+
+            table.buttons().container().appendTo($('.col-sm-6:eq(0)', table.table().container()));
+        });
+    </script>
+}
