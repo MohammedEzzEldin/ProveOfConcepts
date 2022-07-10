@@ -1,18 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
 using POVs.BL.Interface;
 using POVs.BL.Mapper;
 using POVs.BL.Repository;
 using POVs.DAL.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace POVs.PR
 {
@@ -28,8 +24,9 @@ namespace POVs.PR
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-
+            services.AddControllersWithViews()
+                    .AddNewtonsoftJson(option => option.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            
             //connection string
             var con = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationContext>(option => option.UseSqlServer(con));
@@ -39,6 +36,9 @@ namespace POVs.PR
 
             services.AddScoped<IDepartmentRep,DepartmentRep>();
             services.AddScoped<IEmployeeRep,EmployeeRep>();
+            services.AddScoped<ICountryRep,CountryRep>();
+            services.AddScoped<ICityRep,CityRep>();
+            services.AddScoped<IDistrictRep,DistrictRep>();
 
 
         }

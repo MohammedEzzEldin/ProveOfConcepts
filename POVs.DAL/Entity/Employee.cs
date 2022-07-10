@@ -22,7 +22,7 @@ namespace POVs.DAL.Entity
         public bool IsUpdated { get; set; }
         public bool IsActive { get; set; }
         public int DepartmentId { get; set; }
-        public int DistrictId { get; set; }
+        public int? DistrictId { get; set; }
         // Navigation Properity
         [ForeignKey("DepartmentId")]
         public Department Department { get; set; }

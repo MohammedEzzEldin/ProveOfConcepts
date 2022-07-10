@@ -60,6 +60,7 @@
                                     <th scope="col">Salary</th>
                                     <th scope="col">Hire Date</th>
                                     <th scope="col">Department</th>
+                                    <th scope="col">District</th>
                                     <th scope="col">Details</th>
                                     <th scope="col">Update</th>
                                     <th scope="col">Delete</th>
@@ -74,6 +75,15 @@
                                         <td>@item.Salary</td>
                                         <td>@item.HireDate.ToString("dd/MM/yyyy")</td>
                                         <td>@item.Department.Name</td>
+                                        <td>
+                                            @{
+                                                if (item.District != null)
+                                                    @item.District.Name
+                                            }
+                                        </td>
+
+
+
                                         <td>
                                             <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
                                         </td>

@@ -497,14 +497,11 @@
 
     <!-- Jquery Core Js -->
     <script src="~/plugins/jquery/jquery.min.js"></script>
-    @RenderSection("JqueryValidation", required: false)
 
     <!-- Bootstrap Core Js -->
     <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
 
 
-    @RenderSection("BootstrapSelectScript", required: false)
-    @RenderSection("DataTableScripts", required: false);
 
     <!-- Slimscroll Plugin Js -->
     <script src="~/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -538,6 +535,9 @@
 
     <!-- Demo Js -->
     <script src="~/js/demo.js"></script>
+    @RenderSection("JqueryValidation", required: false)
+    @RenderSection("BootstrapSelectScript", required: false)
+    @RenderSection("DataTableScripts", required: false);
     @RenderSection("Scripts", required: false)
 </body>
 

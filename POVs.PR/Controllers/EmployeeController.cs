@@ -16,14 +16,20 @@ namespace POVs.PR.Controllers
         private readonly IEmployeeRep employee;
         private readonly IMapper mapper;
         private readonly IDepartmentRep department;
+        private readonly ICityRep city;
+        private readonly IDistrictRep district;
         #endregion
 
         #region Ctor
-        public EmployeeController(IEmployeeRep employee, IMapper mapper, IDepartmentRep department)
+        public EmployeeController(
+            IEmployeeRep employee, IMapper mapper, IDepartmentRep department,ICityRep city, IDistrictRep district
+        )
         {
             this.employee = employee;
             this.mapper = mapper;
             this.department = department;
+            this.city = city;
+            this.district = district;
         }
         #endregion
 
@@ -148,8 +154,23 @@ namespace POVs.PR.Controllers
         }
         #endregion
 
-        #region Ajax Call
-
+        #region Ajax Call 
+        // Get Cities Data based on Country ID
+        [HttpPost]
+        public async Task<JsonResult> GetCitiesByCountryId(int CountryId)
+        {
+            var data = await city.GetAsync(c => c.CountryId == CountryId);
+            //var cities = mapper.Map<IEnumerable<CityVM>>(data);
+            return Json(data);
+        }
+        // Get District Data based on City ID
+        [HttpPost]
+        public async Task<JsonResult> GetDistrictByCityId(int CityId)
+        {
+            var data = await district.GetAsync(c => c.CityId == CityId);
+            var districts = mapper.Map<IEnumerable<DistrictVM>>(data);
+            return Json(districts);
+        }
         #endregion
     }
 

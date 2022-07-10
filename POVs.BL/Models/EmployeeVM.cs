@@ -36,5 +36,7 @@ namespace POVs.BL.ModelView
         public bool IsActive { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
+        public int? DistrictId { get; set; }
+        public District District { get; set; }
     }
 }

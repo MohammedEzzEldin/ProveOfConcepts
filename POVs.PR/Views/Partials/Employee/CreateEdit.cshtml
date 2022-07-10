@@ -1,5 +1,13 @@
 ﻿@model EmployeeVM
 
+@inject ICountryRep country
+@inject ICityRep city
+@inject IDistrictRep district
+
+@section BootstrapSelectStyles {
+    bootstrap-select
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+}
 <div asp-validation-summary="All" class="text-danger font-bold"></div>
 
 <label for="Name">Name</label>
@@ -40,13 +48,89 @@
 <span asp-validation-for="DepartmentId" class="text-danger"></span>
 <br />
 
+<br />
+<label for="CountryList">Country</label>
+<select id="CountryList">
+    <option>Choose Country</option>
+    @foreach (var item in await country.GetAsync())
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>
+@*<span asp-validation-for="CountryList" class="text-danger"></span>*@
+
+<br />
+<br />
+<label for="CityList">City</label>
+<select id="CityList">
+    <option>Choose City</option>
+    @*@foreach (var item in await city.GetAsync())
+        {
+            <option value="@item.Id">@item.Name</option>
+        }*@
+</select>
+
+<br />
+<br />
+<label for="DistrictId">District</label>
+<select id="DistrictId" asp-for="DistrictId">
+    <option>Choose District</option>
+    @*@foreach (var item in await district.GetAsync())
+        {
+            <option value="@item.Id">@item.Name</option>
+        }*@
+</select>
+<span asp-validation-for="DistrictId" class="text-danger"></span>
+<br />
+<br />
+
 <div class="demo-checkbox">
     <input type="checkbox" asp-for="IsActive" checked />
     <label asp-for="IsActive">Active</label>
     <span asp-validation-for="IsActive" class="text-danger"></span>
 </div>
 
+
 <center>
     <input type="submit" class="btn btn-primary text-center" value="Save" />
     <input type="reset" class="btn btn-danger text-center" value="Cancel" />
 </center>
+
+
+@section JqueryValidation{
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(() => {
+            console.log("I'm here in the main method");
+            $("#CountryList").change(() => {
+                console.log("I'm here in the change method");
+                $("#CityList").empty();
+                $("#CityList").append("<option> Choose City </option>");
+
+                var countryId = $("#CountryList option:selected").val;
+                $.ajax({
+                    type: "POST",
+                    url: "/Employee/GetCitiesByCountryId",
+                    data: { CountryId: countryId },
+                    success: (data) => {
+                        console.log("data :" + data);
+                        $.each(data, (index, element) => {
+                            $("#CityList").append("<option value='" + element.Id + "'>" + element.Name + "</option>");
+                        });
+                    },
+                    error: function (error) {
+                        console.log("error :" + error);
+                        alert(error);
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+<!--@section BootstrapSelectScripts {-->
+
+    <!--Select Plugin Js-->
+    <!--<script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+}-->

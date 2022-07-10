@@ -8,12 +8,20 @@ namespace POVs.BL.Mapper
     {
         public DomainProfile()
         {
-            // from entity to vm (Retreive)
             CreateMap<Department, DepartmentVM>();
-            CreateMap<Employee, EmployeeVM>();
-            // from vm to entity (create, update and delete)
             CreateMap<DepartmentVM, Department>();
+
+            CreateMap<Employee, EmployeeVM>();
             CreateMap<EmployeeVM, Employee>();
+
+            CreateMap<Country, CountryVM>();
+            CreateMap<CountryVM, Country>();
+
+            CreateMap<City, CityVM>();
+            CreateMap<CityVM, City>();
+
+            CreateMap<District, DistrictVM>();
+            CreateMap<DistrictVM, District>();
         }
     }
 }

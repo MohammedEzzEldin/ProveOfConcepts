@@ -3,10 +3,6 @@
     ViewData["Title"] = "Update";
 }
 
-@section BootstrapSelectStyles {
-    <!--bootstrap-select-->
-    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
-}
 <div class="block-header">
     <h2>Update Employee</h2>
 </div>
@@ -15,14 +11,3 @@
     @{ await Html.RenderPartialAsync("~/Views/Partials/Employee/CreateEdit.cshtml"); }
 </form>
 
-
-@section JqueryValidation{
-    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
-    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-}
-
-@section BootstrapSelectScripts {
-
-    <!-- Select Plugin Js -->
-    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-}
