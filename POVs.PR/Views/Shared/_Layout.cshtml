@@ -497,11 +497,13 @@
 
     <!-- Jquery Core Js -->
     <script src="~/plugins/jquery/jquery.min.js"></script>
+    @RenderSection("JqueryValidation", required: false)
 
     <!-- Bootstrap Core Js -->
     <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
 
-
+    @RenderSection("BootstrapSelectScript", required: false)
+    @RenderSection("DataTableScripts", required: false)
 
     <!-- Slimscroll Plugin Js -->
     <script src="~/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -515,29 +517,12 @@
     <!-- Morris Plugin Js -->
     <script src="~/plugins/raphael/raphael.min.js"></script>
     <script src="~/plugins/morrisjs/morris.js"></script>
-
-    <!-- ChartJs -->
-    <script src="~/plugins/chartjs/Chart.bundle.js"></script>
-
-    <!-- Flot Charts Plugin Js -->
-    <script src="~/plugins/flot-charts/jquery.flot.js"></script>
-    <script src="~/plugins/flot-charts/jquery.flot.resize.js"></script>
-    <script src="~/plugins/flot-charts/jquery.flot.pie.js"></script>
-    <script src="~/plugins/flot-charts/jquery.flot.categories.js"></script>
-    <script src="~/plugins/flot-charts/jquery.flot.time.js"></script>
-
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="~/plugins/jquery-sparkline/jquery.sparkline.js"></script>
-
+    @RenderSection("Charts", required: false)
     <!-- Custom Js -->
     <script src="~/js/admin.js"></script>
-    <script src="~/js/pages/index.js"></script>
 
     <!-- Demo Js -->
     <script src="~/js/demo.js"></script>
-    @RenderSection("JqueryValidation", required: false)
-    @RenderSection("BootstrapSelectScript", required: false)
-    @RenderSection("DataTableScripts", required: false);
     @RenderSection("Scripts", required: false)
 </body>
 

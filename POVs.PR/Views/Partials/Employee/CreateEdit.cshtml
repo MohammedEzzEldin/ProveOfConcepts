@@ -57,17 +57,16 @@
         <option value="@item.Id">@item.Name</option>
     }
 </select>
-@*<span asp-validation-for="CountryList" class="text-danger"></span>*@
 
 <br />
 <br />
 <label for="CityList">City</label>
 <select id="CityList">
     <option>Choose City</option>
-    @*@foreach (var item in await city.GetAsync())
+    @foreach (var item in await city.GetAsync())
         {
             <option value="@item.Id">@item.Name</option>
-        }*@
+        }
 </select>
 
 <br />
@@ -75,10 +74,10 @@
 <label for="DistrictId">District</label>
 <select id="DistrictId" asp-for="DistrictId">
     <option>Choose District</option>
-    @*@foreach (var item in await district.GetAsync())
+    @foreach (var item in await district.GetAsync())
         {
             <option value="@item.Id">@item.Name</option>
-        }*@
+        }
 </select>
 <span asp-validation-for="DistrictId" class="text-danger"></span>
 <br />
@@ -100,15 +99,25 @@
 @section JqueryValidation{
     <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
     <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@section BootstrapSelectScripts {
+
+    @*Select Plugin Js*@
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
     <script>
         $(() => {
-            console.log("I'm here in the main method");
-            $("#CountryList").change(() => {
-                console.log("I'm here in the change method");
-                $("#CityList").empty();
-                $("#CityList").append("<option> Choose City </option>");
+            //---------------------const------------------------
+            const countryList = "#CountryList";
+            const cityList = "#CityList";
+            const districtId = "#DistrictId";
+            //---------------------country change------------------------
+            $(countryList).change(() => {
+                $(cityList).empty();
+                $(cityList).append("<option> Choose City </option>");
 
-                var countryId = $("#CountryList option:selected").val;
+                var countryId = $(countryList +" option:selected").val;
+                console.log("countryId :" + countryId);
                 $.ajax({
                     type: "POST",
                     url: "/Employee/GetCitiesByCountryId",
@@ -116,7 +125,7 @@
                     success: (data) => {
                         console.log("data :" + data);
                         $.each(data, (index, element) => {
-                            $("#CityList").append("<option value='" + element.Id + "'>" + element.Name + "</option>");
+                            $(cityList).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
                         });
                     },
                     error: function (error) {
@@ -125,12 +134,30 @@
                     }
                 });
             });
+            //---------------------city change-------------------------
+            $(cityList).change(() => {
+                $(districtId).empty();
+                $(districtId).append("<option> Choose District </option>");
+
+                var cityId = $(cityList + " option:selected").val;
+                console.log("cityId :" + cityId);
+                $.ajax({
+                    type: "POST",
+                    url: "/Employee/GetCitiesByCountryId",
+                    data: { CityId: cityId },
+                    success: (data) => {
+                        console.log("data :" + data);
+                        $.each(data, (index, element) => {
+                            $(districtId).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
+                        });
+                    },
+                    error: function (error) {
+                        console.log("error :" + error);
+                        alert(error);
+                    }
+                });
+            });
+            //---------------------------------------------------------
         });
     </script>
 }
-
-<!--@section BootstrapSelectScripts {-->
-
-    <!--Select Plugin Js-->
-    <!--<script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-}-->
