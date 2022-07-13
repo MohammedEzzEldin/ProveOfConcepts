@@ -106,7 +106,7 @@
     @*Select Plugin Js*@
     <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
     <script>
-        $(() => {
+        $(document).ready(function () {
             //---------------------const------------------------
             const countryList = "#CountryList";
             const cityList = "#CityList";
@@ -135,15 +135,15 @@
                 });
             });
             //---------------------city change-------------------------
-            $(cityList).change(() => {
+            $("#CityList").change(() => {
                 $(districtId).empty();
                 $(districtId).append("<option> Choose District </option>");
 
-                var cityId = $(cityList + " option:selected").val;
+                var cityId = $("#CityList" + " option:selected").val;
                 console.log("cityId :" + cityId);
                 $.ajax({
                     type: "POST",
-                    url: "/Employee/GetCitiesByCountryId",
+                    url: "/Employee/GetDistrictByCityId",
                     data: { CityId: cityId },
                     success: (data) => {
                         console.log("data :" + data);

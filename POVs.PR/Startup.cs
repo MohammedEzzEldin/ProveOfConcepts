@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +11,9 @@ using POVs.BL.Interface;
 using POVs.BL.Mapper;
 using POVs.BL.Repository;
 using POVs.DAL.Database;
+using POVs.PR.Language;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace POVs.PR
 {
@@ -25,8 +30,16 @@ namespace POVs.PR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews()
-                    .AddNewtonsoftJson(option => option.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            
+                    .AddNewtonsoftJson(option => option.SerializerSettings.ContractResolver = new DefaultContractResolver())
+                    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                    .AddDataAnnotationsLocalization(
+                        option =>
+                        {
+                            option.DataAnnotationLocalizerProvider = (type, factory) =>  factory.Create(typeof(ProjectResources));
+                        }
+                        
+                     );
+               
             //connection string
             var con = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationContext>(option => option.UseSqlServer(con));
@@ -70,6 +83,21 @@ namespace POVs.PR
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            var supportedCulture = new[] { new CultureInfo("ar-EG"),new CultureInfo("en-US") };
+            app.UseRequestLocalization(
+                new RequestLocalizationOptions
+                {
+                    DefaultRequestCulture = new RequestCulture("en-US"),
+                    SupportedCultures = supportedCulture,
+                    SupportedUICultures = supportedCulture,
+                    RequestCultureProviders = new List<IRequestCultureProvider>
+                    {
+                        new QueryStringRequestCultureProvider(),
+                        new CookieRequestCultureProvider()
+                    }
+                }
+             );
         }
     }
 }
