@@ -161,7 +161,8 @@ namespace POVs.PR.Controllers
         {
             var data = await city.GetAsync(c => c.CountryId == CountryId);
             var cities = mapper.Map<IEnumerable<CityVM>>(data);
-            return Json(data);
+            return Json(cities);
+            //return Json(data);
         }
         // Get District Data based on City ID
         [HttpPost]
@@ -170,6 +171,7 @@ namespace POVs.PR.Controllers
             var data = await district.GetAsync(c => c.CityId == CityId);
             var districts = mapper.Map<IEnumerable<DistrictVM>>(data);
             return Json(districts);
+            //return Json(data);
         }
         #endregion
     }
