@@ -26,8 +26,22 @@ using POVs.BL.Interface;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
+using Microsoft.Extensions.Localization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
+using POVs.PR.Language;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ccce26daa16096d99ff083d00b12ce6299975f73", @"/Views/Employee/Update.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abc6b1ccf7d8f5cb74edd6acbb950f96e147fe56", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"29aab9fc94f161ec8e66accfc92a21c570d05b51", @"/Views/_ViewImports.cshtml")]
     public class Views_Employee_Update : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<EmployeeVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Employee", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -67,7 +81,7 @@ using POVs.BL.Interface;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"block-header\">\r\n    <h2>Update Employee</h2>\r\n</div>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ccce26daa16096d99ff083d00b12ce6299975f734692", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ccce26daa16096d99ff083d00b12ce6299975f735183", async() => {
                 WriteLiteral("\r\n");
 #nullable restore
 #line 11 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\Employee\Update.cshtml"
@@ -97,6 +111,8 @@ using POVs.BL.Interface;
             WriteLiteral("\r\n\r\n");
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IStringLocalizer<ProjectResources> ProjectResources { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

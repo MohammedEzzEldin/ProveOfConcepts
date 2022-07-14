@@ -26,8 +26,22 @@ using POVs.BL.Interface;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
+using Microsoft.Extensions.Localization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
+using POVs.PR.Language;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb", @"/Views/Department/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abc6b1ccf7d8f5cb74edd6acbb950f96e147fe56", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"29aab9fc94f161ec8e66accfc92a21c570d05b51", @"/Views/_ViewImports.cshtml")]
     public class Views_Department_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<DepartmentVM>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-primary"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -72,7 +86,7 @@ using POVs.BL.Interface;
 #nullable disable
             WriteLiteral("<h2>Welcome in Department</h2>\r\n\r\n\r\n<br />\r\n\r\n");
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb6196", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb6687", async() => {
                 WriteLiteral("Create");
             }
             );
@@ -140,7 +154,7 @@ using POVs.BL.Interface;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb9318", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb9809", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -174,7 +188,7 @@ using POVs.BL.Interface;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb11901", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb12392", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -208,7 +222,7 @@ using POVs.BL.Interface;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb14483", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c690b9cd8bcbdcf7dbeb04e32fed9f6badbcf5cb14974", async() => {
                 WriteLiteral("Delete");
             }
             );
@@ -252,6 +266,8 @@ using POVs.BL.Interface;
             WriteLiteral("    </tbody>\r\n</table>");
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IStringLocalizer<ProjectResources> ProjectResources { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

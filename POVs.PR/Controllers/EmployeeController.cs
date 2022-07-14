@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using POVs.BL.Interface;
@@ -157,6 +158,7 @@ namespace POVs.PR.Controllers
         #region Ajax Call 
         // Get Cities Data based on Country ID
         [HttpPost]
+        //[AllowAnonymous]
         public async Task<JsonResult> GetCitiesByCountryId(int CountryId)
         {
             var data = await city.GetAsync(c => c.CountryId == CountryId);
@@ -166,6 +168,7 @@ namespace POVs.PR.Controllers
         }
         // Get District Data based on City ID
         [HttpPost]
+        //[AllowAnonymous]
         public async Task<JsonResult> GetDistrictByCityId(int CityId)
         {
             var data = await district.GetAsync(c => c.CityId == CityId);

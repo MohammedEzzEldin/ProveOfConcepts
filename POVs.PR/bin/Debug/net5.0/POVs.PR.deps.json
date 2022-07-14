@@ -318,6 +318,11 @@
         "runtime": {
           "POVs.PR.dll": {}
         },
+        "resources": {
+          "ar-EG/POVs.PR.resources.dll": {
+            "locale": "ar-EG"
+          }
+        },
         "compile": {
           "POVs.PR.dll": {}
         }
