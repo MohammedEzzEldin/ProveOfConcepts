@@ -1,30 +1,30 @@
 ﻿@model DepartmentVM
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = ProjectResources["Details"];
 }
 
 
 <div class="block-header">
-    <h2>Details</h2>
+    <h2>@ProjectResources["Details"]</h2>
 </div>
 <div>
-    <h4>Department</h4>
+    <h4>@ProjectResources["Department"]</h4>
     <hr />
-    <label for="Name">Department Name</label>
+    <label for="Name">@ProjectResources["Name"]</label>
     <input type="text" asp-for="Name" class="form-control" readonly/>
     <br />
 
-    <label for="Code">Department Code</label>
+    <label for="Code">@ProjectResources["Code"]</label>
     <input type="text" asp-for="Code" class="form-control" readonly/>
     <br />
 </div>
 
 <center>
-        <a asp-controller="Department" asp-action="Index" class="btn btn-success">Back to List</a>
+    <a asp-controller="Department" asp-action="Index" class="btn btn-success">@ProjectResources["BacktoList"]</a>
     
-        <a asp-controller="Department" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">Update</a>
+    <a asp-controller="Department" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">@ProjectResources["Update"]</a>
    
-        <a asp-controller="Department" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+    <a asp-controller="Department" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">@ProjectResources["Delete"]</a>
     
 </center>

@@ -5,43 +5,43 @@
 @inject IDistrictRep district
 
 @section BootstrapSelectStyles {
-    bootstrap-select
+    <!--bootstrap-select-->
     <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
 }
 <div asp-validation-summary="All" class="text-danger font-bold"></div>
 
-<label for="Name">Name</label>
+<label for="Name">@ProjectResources["Name"]</label>
 <input type="text" asp-for="Name" class="form-control" />
 <span asp-validation-for="Name" class="text-danger"></span>
 <br />
 
-<label for="Email">Email</label>
+<label for="Email">@ProjectResources["Email"]</label>
 <input type="text" asp-for="Email" class="form-control" />
 <span asp-validation-for="Email" class="text-danger"></span>
 <br />
 
-<label for="Address">Address</label>
+<label for="Address">@ProjectResources["Address"]</label>
 <input type="text" asp-for="Address" class="form-control" />
 <span asp-validation-for="Address" class="text-danger"></span>
 <br />
 
-<label for="Salary">Salary</label>
+<label for="Salary">@ProjectResources["Salary"]</label>
 <input type="number" asp-for="Salary" class="form-control" />
 <span asp-validation-for="Salary" class="text-danger"></span>
 <br />
 
-<label for="Salary">Hire Date</label>
+<label for="Salary">@ProjectResources["HireDate"]</label>
 <input type="date" asp-for="HireDate" class="form-control" />
 <span asp-validation-for="HireDate" class="text-danger"></span>
 <br />
 
-<label for="Notes">Notes</label>
+<label for="Notes">@ProjectResources["Notes"]</label>
 <textarea rows="4" type="text" asp-for="Notes" class="form-control"></textarea>
 <span asp-validation-for="Notes" class="text-danger"></span>
 <br />
 
 
-<label for="DepartmentId">Department</label>
+<label for="DepartmentId">@ProjectResources["Department"]</label>
 <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentsList">
     <option>Choose Department</option>
 </select>
@@ -49,9 +49,9 @@
 <br />
 
 <br />
-<label for="CountryList">Country</label>
+<label for="CountryList">@ProjectResources["Country"]</label>
 <select id="CountryList">
-    <option>Choose Country</option>
+    <option>@ProjectResources["ChooseCountry"]</option>
     @foreach (var item in await country.GetAsync())
     {
         <option value="@item.Id">@item.Name</option>
@@ -60,9 +60,9 @@
 
 <br />
 <br />
-<label for="CityList">City</label>
+<label for="CityList">@ProjectResources["City"]</label>
 <select id="CityList">
-    <option>Choose City</option>
+    <option>@ProjectResources["ChooseCity"]</option>
     @foreach (var item in await city.GetAsync())
         {
             <option value="@item.Id">@item.Name</option>
@@ -71,9 +71,9 @@
 
 <br />
 <br />
-<label for="DistrictId">District</label>
+<label for="DistrictId">@ProjectResources["District"]</label>
 <select id="DistrictId" asp-for="DistrictId">
-    <option>Choose District</option>
+    <option>@ProjectResources["ChooseDistrict"]</option>
     @foreach (var item in await district.GetAsync())
         {
             <option value="@item.Id">@item.Name</option>
@@ -85,14 +85,14 @@
 
 <div class="demo-checkbox">
     <input type="checkbox" asp-for="IsActive" checked />
-    <label asp-for="IsActive">Active</label>
+    <label asp-for="IsActive">@ProjectResources["Active"]</label>
     <span asp-validation-for="IsActive" class="text-danger"></span>
 </div>
 
 
 <center>
-    <input type="submit" class="btn btn-primary text-center" value="Save" />
-    <input type="reset" class="btn btn-danger text-center" value="Cancel" />
+    <input type="submit" class="btn btn-primary text-center" value="@ProjectResources["Save"]" />
+    <input type="reset" class="btn btn-danger text-center" value="@ProjectResources["Cancel"]" />
 </center>
 
 
@@ -114,7 +114,7 @@
             //---------------------country change------------------------
             $(countryList).change(() => {
                 $(cityList).empty();
-                $(cityList).append("<option> Choose City </option>");
+                $(cityList).append("<option> @ProjectResources["ChooseCity"] </option>");
 
                 var countryId = $(countryList +" option:selected").val;
                 console.log("countryId :" + countryId);
@@ -123,7 +123,7 @@
                     url: "/Employee/GetCitiesByCountryId",
                     //dataType:"json",
                     contentType: 'application/json; charset=utf-8',
-                    data: { CountryId: countryId },
+                    data: { "CountryId": countryId },
                     //data: JSON.stringify({ CountryId: countryId }),
                     success: (data) => {
                         console.log("data :" + data);
@@ -140,7 +140,7 @@
             //---------------------city change-------------------------
             $("#CityList").change(() => {
                 $(districtId).empty();
-                $(districtId).append("<option> Choose District </option>");
+                $(districtId).append("<option> @ProjectResources["ChooseDistrict"] </option>");
 
                 var cityId = $("#CityList" + " option:selected").val;
                 console.log("cityId :" + cityId);
@@ -149,7 +149,7 @@
                     url: "/Employee/GetDistrictByCityId",
                     //dataType:"json",
                     contentType: 'application/json; charset=utf-8',
-                    data: { CityId: cityId },
+                    data: { "CityId": cityId },
                     //data: JSON.stringify({ CityId: cityId }),
                     success: (data) => {
                         console.log("data :" + data);

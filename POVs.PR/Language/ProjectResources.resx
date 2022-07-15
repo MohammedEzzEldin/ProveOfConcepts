@@ -117,14 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="BacktoList" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>Choose City</value>
+  </data>
+  <data name="ChooseCountry" xml:space="preserve">
+    <value> Choose Country</value>
+  </data>
+  <data name="ChooseDepartment" xml:space="preserve">
+    <value>Choose Department</value>
+  </data>
+  <data name="ChooseDistrict" xml:space="preserve">
+    <value>Choose District</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="Code" xml:space="preserve">
     <value>Code</value>
   </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateNewDepartment" xml:space="preserve">
+    <value>Create New Department</value>
+  </data>
   <data name="CreateNewEmployee" xml:space="preserve">
     <value>Create New Employee</value>
+  </data>
+  <data name="DASHBOARD" xml:space="preserve">
+    <value>DASHBOARD</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
@@ -141,11 +180,17 @@
   <data name="District" xml:space="preserve">
     <value>District</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="Employee" xml:space="preserve">
     <value>Employee</value>
   </data>
   <data name="EmployeeCard" xml:space="preserve">
     <value>Employee Card</value>
+  </data>
+  <data name="Hash" xml:space="preserve">
+    <value>#</value>
   </data>
   <data name="HireDate" xml:space="preserve">
     <value>Hire Date</value>
@@ -155,6 +200,9 @@
   </data>
   <data name="Id" xml:space="preserve">
     <value>Id</value>
+  </data>
+  <data name="MainNavigation" xml:space="preserve">
+    <value>Main Navigation</value>
   </data>
   <data name="Max length is 20" xml:space="preserve">
     <value>Max length is 20</value>
@@ -167,6 +215,18 @@
   </data>
   <data name="Name Required" xml:space="preserve">
     <value>Name Required</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="ProjectNameOverNavbar" xml:space="preserve">
+    <value>M.EzzEldin - Prove of Concepts</value>
   </data>
   <data name="Range btw 1 and 100" xml:space="preserve">
     <value>Range btw 1 and 100</value>
@@ -182,6 +242,12 @@
   </data>
   <data name="Update" xml:space="preserve">
     <value>Update</value>
+  </data>
+  <data name="Version_Colon" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="WelcomeInDepartment" xml:space="preserve">
+    <value>Welcome in Department</value>
   </data>
   <data name="WelcomeToEmployee" xml:space="preserve">
     <value>Welcome To Employees</value>

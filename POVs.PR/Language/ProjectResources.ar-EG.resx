@@ -117,14 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>مفعل</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="BacktoList" xml:space="preserve">
+    <value>العودة إلى القائمة</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>إلغاء</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>اختار المدينة</value>
+  </data>
+  <data name="ChooseCountry" xml:space="preserve">
+    <value>اختيار الدولة</value>
+  </data>
+  <data name="ChooseDepartment" xml:space="preserve">
+    <value>اختيار القسم</value>
+  </data>
+  <data name="ChooseDistrict" xml:space="preserve">
+    <value>اختار المنطقة</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>مدينة</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
   </data>
   <data name="Code" xml:space="preserve">
     <value>كود</value>
   </data>
+  <data name="Country" xml:space="preserve">
+    <value>الدولة</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="CreateNewDepartment" xml:space="preserve">
+    <value>إضافة قسم جديد</value>
+  </data>
   <data name="CreateNewEmployee" xml:space="preserve">
     <value>إضافة موظف جديد</value>
+  </data>
+  <data name="DASHBOARD" xml:space="preserve">
+    <value>لوحة التحكم</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>حذف</value>
@@ -138,11 +177,17 @@
   <data name="District" xml:space="preserve">
     <value>منطقة</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
   <data name="Employee" xml:space="preserve">
     <value>موظف</value>
   </data>
   <data name="EmployeeCard" xml:space="preserve">
     <value>لوحة الموظفين</value>
+  </data>
+  <data name="Hash" xml:space="preserve">
+    <value>#</value>
   </data>
   <data name="HireDate" xml:space="preserve">
     <value>تاريخ التوظيف</value>
@@ -152,6 +197,9 @@
   </data>
   <data name="Id" xml:space="preserve">
     <value>الرقم التعريفي</value>
+  </data>
+  <data name="MainNavigation" xml:space="preserve">
+    <value>الملاحة الرئيسية</value>
   </data>
   <data name="Max length is 20" xml:space="preserve">
     <value>أقصى طول هو 20</value>
@@ -164,6 +212,18 @@
   </data>
   <data name="Name Required" xml:space="preserve">
     <value>الاسم مطلوب</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>إشعارات</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>من فضلك انتظر...</value>
+  </data>
+  <data name="ProjectNameOverNavbar" xml:space="preserve">
+    <value>محمد عزالدين - تثيبت المفاهيم</value>
   </data>
   <data name="Range btw 1 and 100" xml:space="preserve">
     <value>القيمة بين 1 و 100</value>
@@ -179,6 +239,12 @@
   </data>
   <data name="Update" xml:space="preserve">
     <value>تعديل</value>
+  </data>
+  <data name="Version_Colon" xml:space="preserve">
+    <value>الإصدار:</value>
+  </data>
+  <data name="WelcomeInDepartment" xml:space="preserve">
+    <value>مرحبا بك في الأقسام</value>
   </data>
   <data name="WelcomeToEmployee" xml:space="preserve">
     <value>مرحبا بك في عرض الموظفين</value>

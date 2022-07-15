@@ -1,38 +1,38 @@
 ﻿@model EmployeeVM
 <div>
-    <h4>Employee</h4>
+    <h4>@ProjectResources["Employee"]</h4>
     <hr />
-    <label for="Name">Name</label>
+    <label for="Name">@ProjectResources["Name"]</label>
     <input type="text" asp-for="Name" class="form-control" readonly />
     <br />
 
-    <label for="Salary">Salary</label>
+    <label for="Salary">@ProjectResources["Salary"]</label>
     <input type="text" asp-for="Salary" class="form-control" readonly />
     <br />
 
-    <label for="HireDate">Hire Date</label>
+    <label for="HireDate">@ProjectResources["HireDate"]</label>
     <input type="text" asp-for="HireDate" class="form-control" readonly />
     <br />
 
 
-    <label for="Email">Email</label>
+    <label for="Email">@ProjectResources["Email"]</label>
     <input type="text" asp-for="Email" class="form-control" readonly />
     <br />
 
 
-    <label for="Address">Address</label>
+    <label for="Address">@ProjectResources["Address"]</label>
     <input type="text" asp-for="Address" class="form-control" readonly />
     <br />
 
 
-    <label for="Notes">Notes</label>
+    <label for="Notes">@ProjectResources["Notes"]</label>
     <textarea rows="4" asp-for="Notes" class="form-control" readonly></textarea>
     <br />
 
 
-    <label for="Department">Department</label>
+    <label for="Department">@ProjectResources["Department"]</label>
     <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentsList" disabled>
-        <option>Choose Department</option>
+        <option>@ProjectResources["ChooseDepartment"]</option>
     </select>
     <br />
     <br />

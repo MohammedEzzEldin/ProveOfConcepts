@@ -1,12 +1,12 @@
 ﻿@model POVs.BL.ModelView.DepartmentVM
 
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = ProjectResources["Update"];
 }
 
-<h2>Update</h2>
+<h2>@ProjectResources["Update"]</h2>
 
-<h4>Update : @Model.Name</h4>
+<h4>@ProjectResources["Update"] : @Model.Name</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,7 +14,7 @@
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="Id"/>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label">@ProjectResources["Name"]</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
@@ -24,16 +24,16 @@
                 <span asp-validation-for="Code" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Update" class="btn btn-default" />
-                <input type="reset" value="Cancel" class="btn btn-danger" />
+                <input type="submit" value="@ProjectResources["Update"]" class="btn btn-default" />
+                <input type="reset" value="@ProjectResources["Cancel"]" class="btn btn-danger" />
             </div>
         </form>
     </div>
 </div>
 
 <center>
-    <a asp-controller="Department" asp-action="Index" class="btn btn-success">Back to List</a>
-    <a asp-controller="Department" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+    <a asp-controller="Department" asp-action="Index" class="btn btn-success">@ProjectResources["BacktoList"]</a>
+    <a asp-controller="Department" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">@ProjectResources["Delete"]</a>
 </center>
 
 @section JqueryValidation{
