@@ -123,6 +123,9 @@
   <data name="Address" xml:space="preserve">
     <value>Address</value>
   </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>عربي</value>
+  </data>
   <data name="BacktoList" xml:space="preserve">
     <value>Back to List</value>
   </data>
@@ -189,6 +192,9 @@
   <data name="EmployeeCard" xml:space="preserve">
     <value>Employee Card</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
   <data name="Hash" xml:space="preserve">
     <value>#</value>
   </data>
@@ -200,6 +206,9 @@
   </data>
   <data name="Id" xml:space="preserve">
     <value>Id</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
   </data>
   <data name="MainNavigation" xml:space="preserve">
     <value>Main Navigation</value>

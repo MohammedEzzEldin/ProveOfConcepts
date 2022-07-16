@@ -123,6 +123,9 @@
   <data name="Address" xml:space="preserve">
     <value>عنوان</value>
   </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>عربي</value>
+  </data>
   <data name="BacktoList" xml:space="preserve">
     <value>العودة إلى القائمة</value>
   </data>
@@ -186,6 +189,9 @@
   <data name="EmployeeCard" xml:space="preserve">
     <value>لوحة الموظفين</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
   <data name="Hash" xml:space="preserve">
     <value>#</value>
   </data>
@@ -197,6 +203,9 @@
   </data>
   <data name="Id" xml:space="preserve">
     <value>الرقم التعريفي</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>اللغة</value>
   </data>
   <data name="MainNavigation" xml:space="preserve">
     <value>الملاحة الرئيسية</value>

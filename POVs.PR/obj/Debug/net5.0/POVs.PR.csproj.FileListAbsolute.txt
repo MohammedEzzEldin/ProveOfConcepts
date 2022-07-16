@@ -170,8 +170,9 @@ F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcept
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\ar-EG\POVs.PR.resources.dll
-F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.Language.ProjectResources.resources
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.Language.ProjectResources.ar-EG.resources
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.csproj.GenerateResource.cache
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\ar-EG\POVs.PR.resources.dll
-F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\ar-EG\POVs.PR.resources.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\en-US\POVs.PR.resources.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.Language.ProjectResources.en-US.resources
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\en-US\POVs.PR.resources.dll
