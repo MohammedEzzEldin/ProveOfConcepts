@@ -6,6 +6,10 @@
     ViewData["Title"] = ProjectResources["Create"];
 }
 
+@section BootstrapSelectStyles {
+    <!--bootstrap-select-->
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+}
 <div class="block-header">
     <h2>Create Employee</h2>
 </div>
@@ -15,3 +19,75 @@
 
 </form>
 
+
+@section JqueryValidation{
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@section BootstrapSelectScripts {
+
+    @*Select Plugin Js*@
+    @*<script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>*@
+    <script>
+        $(document).ready(function () {
+            //---------------------const------------------------
+            const countryList = "#CountryList";
+            const cityList = "#CityList";
+            const districtId = "#DistrictId";
+            //---------------------country change------------------------
+            $(countryList).change(() => {
+                $(cityList).empty();
+                $(cityList).append("<option> @ProjectResources["ChooseCity"] </option>");
+
+                var countryId = $(countryList +" option:selected").val();
+                console.log("countryId :" + countryId);
+                var data = { "CountryId": countryId };
+                console.log("data :" + data);
+                $.ajax({
+                    type: "POST",
+                    url: "/Employee/GetCitiesByCountryId",
+                    data: data,
+                    success: (data) => {
+                        $.each(data, (index, element) => {
+                            $(cityList).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
+                        });
+                    },
+                    error: function (xhr, textStatus, error) {
+                        //console.log(xhr.statusText);
+                        //console.log(textStatus);
+                        //console.log(error);
+                        alert(error);
+                    }
+                });
+            });
+            //---------------------city change-------------------------
+            $(cityList).change(() => {
+                $(districtId).empty();
+                $(districtId).append("<option> @ProjectResources["ChooseDistrict"] </option>");
+
+                var cityId = $("#CityList" + " option:selected").val();
+                //console.log("cityId :" + cityId);
+                var data = { "CityId": cityId };
+                console.log("data :" + data);
+                $.ajax({
+                    type: "POST",
+                    url: "/Employee/GetDistrictByCityId",
+                    data: data,
+                    success: (data) => {
+                        $.each(data, (index, element) => {
+                            $(districtId).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
+                        });
+                    },
+                    error: function (xhr, textStatus, error) {
+                        //console.log(xhr.statusText);
+                        //console.log(textStatus);
+                        //console.log(error);
+                        alert(error);
+                    }
+                });
+            });
+            //---------------------------------------------------------
+        });
+    </script>
+}

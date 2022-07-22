@@ -321,6 +321,9 @@
         "resources": {
           "ar-EG/POVs.PR.resources.dll": {
             "locale": "ar-EG"
+          },
+          "en-US/POVs.PR.resources.dll": {
+            "locale": "en-US"
           }
         },
         "compile": {

@@ -4,10 +4,10 @@
 @inject ICityRep city
 @inject IDistrictRep district
 
-@section BootstrapSelectStyles {
+<!--@section BootstrapSelectStyles {-->
     <!--bootstrap-select-->
-    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
-}
+    <!--<link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+}-->
 <div asp-validation-summary="All" class="text-danger font-bold"></div>
 
 <label for="Name">@ProjectResources["Name"]</label>
@@ -96,17 +96,18 @@
 </center>
 
 
-@section JqueryValidation{
+<!--@section JqueryValidation{
     <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
     <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }
 
-@section BootstrapSelectScripts {
+@section BootstrapSelectScripts {-->
 
     @*Select Plugin Js*@
-    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-    <script>
+    @*<script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>*@
+    <!--<script>
         $(document).ready(function () {
+            debugger
             //---------------------const------------------------
             const countryList = "#CountryList";
             const cityList = "#CityList";
@@ -138,7 +139,7 @@
                 });
             });
             //---------------------city change-------------------------
-            $("#CityList").change(() => {
+            $(cityList).change(() => {
                 $(districtId).empty();
                 $(districtId).append("<option> @ProjectResources["ChooseDistrict"] </option>");
 
@@ -166,4 +167,4 @@
             //---------------------------------------------------------
         });
     </script>
-}
+}-->
