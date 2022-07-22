@@ -49,6 +49,7 @@
                         $.each(data, (index, element) => {
                             $(cityList).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
                         });
+                        $('select').selectpicker('refresh');
                     },
                     error: function (xhr, textStatus, error) {
                         //console.log(xhr.statusText);
@@ -75,6 +76,7 @@
                         $.each(data, (index, element) => {
                             $(districtId).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
                         });
+                        $('select').selectpicker('refresh');
                     },
                     error: function (xhr, textStatus, error) {
                         //console.log(xhr.statusText);
