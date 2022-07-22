@@ -1,4 +1,5 @@
-﻿using POVs.DAL.Entity;
+﻿using Microsoft.AspNetCore.Http;
+using POVs.DAL.Entity;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -34,6 +35,10 @@ namespace POVs.BL.ModelView
         public bool IsDeleted { get; set; }
         public bool IsUpdated { get; set; }
         public bool IsActive { get; set; }
+        public string ImageName { get; set; }
+        public string CvName { get; set; }
+        public IFormFile Image { get; set; }
+        public IFormFile Cv { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
         public int? DistrictId { get; set; }

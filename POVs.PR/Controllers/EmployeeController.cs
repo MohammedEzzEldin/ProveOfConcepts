@@ -7,6 +7,7 @@ using POVs.BL.ModelView;
 using POVs.DAL.Entity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace POVs.PR.Controllers
@@ -23,7 +24,7 @@ namespace POVs.PR.Controllers
 
         #region Ctor
         public EmployeeController(
-            IEmployeeRep employee, IMapper mapper, IDepartmentRep department,ICityRep city, IDistrictRep district
+            IEmployeeRep employee, IMapper mapper, IDepartmentRep department, ICityRep city, IDistrictRep district
         )
         {
             this.employee = employee;
@@ -46,7 +47,7 @@ namespace POVs.PR.Controllers
             else
             {
                 data = await employee.GetAsync(emp => emp.IsActive == true && emp.IsDeleted == false);
-            }                
+            }
             var result = mapper.Map<IEnumerable<EmployeeVM>>(data);
 
             return View(result);
@@ -71,6 +72,33 @@ namespace POVs.PR.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    // catch folder path
+                    string ImagePath = Directory.GetCurrentDirectory() + @"wwwrooot\Files\Imgs";
+                    string CvPath = Directory.GetCurrentDirectory() + @"wwwrooot\Files\Docs";
+
+                    // catch file name
+                    //GUID => Word of 36 characters
+                    // CCEMWCLMELCKM..pdf
+                    if (emp.Image != null)
+                        emp.ImageName = Guid.NewGuid() + Path.GetFileName(emp.Image.FileName);
+
+                    if (emp.Cv.FileName != null)
+                        emp.CvName = Guid.NewGuid() + Path.GetFileName(emp.Cv.FileName);
+
+                    //catch final path
+                    string ImageDestPath = Path.Combine(ImagePath , emp.ImageName);
+                    string CvDestPath = Path.Combine(CvPath , emp.CvName);
+
+                    // save the files
+                    using (var ImageStream  = new FileStream(ImageDestPath,FileMode.Create))
+                    {
+                        emp.Image.CopyTo(ImageStream);
+                    }
+                    using (var CvStream  = new FileStream(CvDestPath,FileMode.Create))
+                    {
+                        emp.Cv.CopyTo(CvStream);
+                    }
+
                     var data = mapper.Map<Employee>(emp);
                     await employee.CreateAsync(data);
                     return RedirectToAction("Index");

@@ -10,7 +10,7 @@
     bootstrap-select
     <link href="~/plugins/bootstrap-select/css/bootstrap-select..css" rel="stylesheet">
 }*@
-<form asp-controller="Employee" asp-action="Update" class="form-group">
+<form asp-controller="Employee" asp-action="Update" class="form-group" enctype="multipart/form-data">
     @{ await Html.RenderPartialAsync("~/Views/Partials/Employee/CreateEdit.cshtml"); }
 </form>
 

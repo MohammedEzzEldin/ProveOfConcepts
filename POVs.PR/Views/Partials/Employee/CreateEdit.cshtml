@@ -36,6 +36,13 @@
 <span asp-validation-for="Notes" class="text-danger"></span>
 <br />
 
+<label asp-for="Image">@ProjectResources["Image"]</label>
+<input asp-for="Image" type="file" class="form-control" />
+<br />
+
+<label asp-for="Cv">@ProjectResources["Cv"]</label>
+<input asp-for="Cv" type="file" class="form-control" />
+<br />
 
 <label for="DepartmentId">@ProjectResources["Department"]</label>
 <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentsList">
@@ -44,13 +51,12 @@
 <span asp-validation-for="DepartmentId" class="text-danger"></span>
 <br />
 
-<br />
 <label for="CountryList">@ProjectResources["Country"]</label>
 <select id="CountryList">
     <option>@ProjectResources["ChooseCountry"]</option>
     @foreach (var item in await country.GetAsync())
     {
-    <option value="@item.Id">@item.Name</option>
+        <option value="@item.Id">@item.Name</option>
     }
 </select>
 
@@ -61,7 +67,7 @@
     <option>@ProjectResources["ChooseCity"]</option>
     @foreach (var item in await city.GetAsync())
     {
-    <option value="@item.Id">@item.Name</option>
+        <option value="@item.Id">@item.Name</option>
     }
 </select>
 
@@ -72,7 +78,7 @@
     <option>@ProjectResources["ChooseDistrict"]</option>
     @foreach (var item in await district.GetAsync())
     {
-    <option value="@item.Id">@item.Name</option>
+        <option value="@item.Id">@item.Name</option>
     }
 </select>
 <span asp-validation-for="DistrictId" class="text-danger"></span>
@@ -87,7 +93,7 @@
 
 
 <center>
-    <input type="submit" class="btn btn-primary text-center" value=''@ProjectResources["Save"]'' />
+    <input type="submit" class="btn btn-primary text-center" value='' @ProjectResources["Save"] '' />
     <input type="reset" class="btn btn-danger text-center" value="@ProjectResources[" Cancel"]" />
 </center>
 

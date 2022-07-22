@@ -165,6 +165,9 @@
   <data name="CreateNewEmployee" xml:space="preserve">
     <value>إضافة موظف جديد</value>
   </data>
+  <data name="Cv" xml:space="preserve">
+    <value>سي.في</value>
+  </data>
   <data name="DASHBOARD" xml:space="preserve">
     <value>لوحة التحكم</value>
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="Id" xml:space="preserve">
     <value>الرقم التعريفي</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>صورة</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>اللغة</value>

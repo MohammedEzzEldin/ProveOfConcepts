@@ -21,6 +21,8 @@ namespace POVs.DAL.Entity
         public bool IsDeleted { get; set; }
         public bool IsUpdated { get; set; }
         public bool IsActive { get; set; }
+        public string ImageName { get; set; }
+        public string CvName { get; set; }
         public int DepartmentId { get; set; }
         public int? DistrictId { get; set; }
         // Navigation Properity
