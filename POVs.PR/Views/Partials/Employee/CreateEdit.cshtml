@@ -4,10 +4,6 @@
 @inject ICityRep city
 @inject IDistrictRep district
 
-<!--@section BootstrapSelectStyles {-->
-    <!--bootstrap-select-->
-    <!--<link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
-}-->
 <div asp-validation-summary="All" class="text-danger font-bold"></div>
 
 <label for="Name">@ProjectResources["Name"]</label>
@@ -54,7 +50,7 @@
     <option>@ProjectResources["ChooseCountry"]</option>
     @foreach (var item in await country.GetAsync())
     {
-        <option value="@item.Id">@item.Name</option>
+    <option value="@item.Id">@item.Name</option>
     }
 </select>
 
@@ -64,9 +60,9 @@
 <select id="CityList">
     <option>@ProjectResources["ChooseCity"]</option>
     @foreach (var item in await city.GetAsync())
-        {
-            <option value="@item.Id">@item.Name</option>
-        }
+    {
+    <option value="@item.Id">@item.Name</option>
+    }
 </select>
 
 <br />
@@ -75,9 +71,9 @@
 <select id="DistrictId" asp-for="DistrictId">
     <option>@ProjectResources["ChooseDistrict"]</option>
     @foreach (var item in await district.GetAsync())
-        {
-            <option value="@item.Id">@item.Name</option>
-        }
+    {
+    <option value="@item.Id">@item.Name</option>
+    }
 </select>
 <span asp-validation-for="DistrictId" class="text-danger"></span>
 <br />
@@ -91,80 +87,13 @@
 
 
 <center>
-    <input type="submit" class="btn btn-primary text-center" value="@ProjectResources["Save"]" />
-    <input type="reset" class="btn btn-danger text-center" value="@ProjectResources["Cancel"]" />
+    <input type="submit" class="btn btn-primary text-center" value=''@ProjectResources["Save"]'' />
+    <input type="reset" class="btn btn-danger text-center" value="@ProjectResources[" Cancel"]" />
 </center>
 
 
-<!--@section JqueryValidation{
+@section JqueryValidation{
     <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
     <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }
 
-@section BootstrapSelectScripts {-->
-
-    @*Select Plugin Js*@
-    @*<script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>*@
-    <!--<script>
-        $(document).ready(function () {
-            debugger
-            //---------------------const------------------------
-            const countryList = "#CountryList";
-            const cityList = "#CityList";
-            const districtId = "#DistrictId";
-            //---------------------country change------------------------
-            $(countryList).change(() => {
-                $(cityList).empty();
-                $(cityList).append("<option> @ProjectResources["ChooseCity"] </option>");
-
-                var countryId = $(countryList +" option:selected").val;
-                console.log("countryId :" + countryId);
-                $.ajax({
-                    type: "POST",
-                    url: "/Employee/GetCitiesByCountryId",
-                    //dataType:"json",
-                    contentType: 'application/json; charset=utf-8',
-                    data: { "CountryId": countryId },
-                    //data: JSON.stringify({ CountryId: countryId }),
-                    success: (data) => {
-                        console.log("data :" + data);
-                        $.each(data, (index, element) => {
-                            $(cityList).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
-                        });
-                    },
-                    error: function (error) {
-                        console.log("error :" + error);
-                        alert(error);
-                    }
-                });
-            });
-            //---------------------city change-------------------------
-            $(cityList).change(() => {
-                $(districtId).empty();
-                $(districtId).append("<option> @ProjectResources["ChooseDistrict"] </option>");
-
-                var cityId = $("#CityList" + " option:selected").val;
-                console.log("cityId :" + cityId);
-                $.ajax({
-                    type: "POST",
-                    url: "/Employee/GetDistrictByCityId",
-                    //dataType:"json",
-                    contentType: 'application/json; charset=utf-8',
-                    data: { "CityId": cityId },
-                    //data: JSON.stringify({ CityId: cityId }),
-                    success: (data) => {
-                        console.log("data :" + data);
-                        $.each(data, (index, element) => {
-                            $(districtId).append("<option value='" + element.Id + "'>" + element.Name + "</option>");
-                        });
-                    },
-                    error: function (error) {
-                        console.log("error :" + error);
-                        alert(error);
-                    }
-                });
-            });
-            //---------------------------------------------------------
-        });
-    </script>
-}-->

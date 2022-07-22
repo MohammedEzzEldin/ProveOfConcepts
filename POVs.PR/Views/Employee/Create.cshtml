@@ -6,17 +6,15 @@
     ViewData["Title"] = ProjectResources["Create"];
 }
 
-@section BootstrapSelectStyles {
-    <!--bootstrap-select-->
-    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
-}
 <div class="block-header">
     <h2>Create Employee</h2>
 </div>
 
+@section BootstrapSelectStyles {
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet">
+}
 <form asp-controller="Employee" asp-action="Create" class="form-group">
     @{ await Html.RenderPartialAsync("~/Views/Partials/Employee/CreateEdit.cshtml"); }
-
 </form>
 
 
@@ -27,8 +25,7 @@
 
 @section BootstrapSelectScripts {
 
-    @*Select Plugin Js*@
-    @*<script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>*@
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
     <script>
         $(document).ready(function () {
             //---------------------const------------------------
