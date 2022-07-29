@@ -73,30 +73,36 @@ namespace POVs.PR.Controllers
                 if (ModelState.IsValid)
                 {
                     // catch folder path
-                    string ImagePath = Directory.GetCurrentDirectory() + @"wwwrooot\Files\Imgs";
-                    string CvPath = Directory.GetCurrentDirectory() + @"wwwrooot\Files\Docs";
+                    string ImagePath = Directory.GetCurrentDirectory() + @"\wwwroot\Files\Imgs";
+                    string CvPath = Directory.GetCurrentDirectory() + @"\wwwroot\Files\Docs";
 
                     // catch file name
                     //GUID => Word of 36 characters
                     // CCEMWCLMELCKM..pdf
                     if (emp.Image != null)
+                    {
                         emp.ImageName = Guid.NewGuid() + Path.GetFileName(emp.Image.FileName);
 
-                    if (emp.Cv.FileName != null)
+                        //catch final path
+                        string ImageDestPath = Path.Combine(ImagePath, emp.ImageName);
+
+                        // save the files
+                        using (var ImageStream = new FileStream(ImageDestPath, FileMode.Create))
+                        {
+                            emp.Image.CopyTo(ImageStream);
+                        }
+                    }
+
+                    if (emp.Cv != null)
+                    {
                         emp.CvName = Guid.NewGuid() + Path.GetFileName(emp.Cv.FileName);
 
-                    //catch final path
-                    string ImageDestPath = Path.Combine(ImagePath , emp.ImageName);
-                    string CvDestPath = Path.Combine(CvPath , emp.CvName);
+                        string CvDestPath = Path.Combine(CvPath, emp.CvName);
 
-                    // save the files
-                    using (var ImageStream  = new FileStream(ImageDestPath,FileMode.Create))
-                    {
-                        emp.Image.CopyTo(ImageStream);
-                    }
-                    using (var CvStream  = new FileStream(CvDestPath,FileMode.Create))
-                    {
-                        emp.Cv.CopyTo(CvStream);
+                        using (var CvStream = new FileStream(CvDestPath, FileMode.Create))
+                        {
+                            emp.Cv.CopyTo(CvStream);
+                        }
                     }
 
                     var data = mapper.Map<Employee>(emp);
@@ -107,7 +113,7 @@ namespace POVs.PR.Controllers
             catch (Exception ex)
             {
                 ViewBag.DepartmentsList = await GetDepartmentsListAsync();
-                TempData["error"] = ex.Message;
+                TempData["Error"] = ex.Message;
             }
             //ModelState.Clear();
             return View(emp);

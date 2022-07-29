@@ -13,6 +13,9 @@
 @section BootstrapSelectStyles {
     <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet">
 }
+
+<h6 class="text-danger font-bold">@TempData["Error"]</h6>
+
 <form asp-controller="Employee" asp-action="Create" class="form-group" enctype="multipart/form-data">
     @{ await Html.RenderPartialAsync("~/Views/Partials/Employee/CreateEdit.cshtml"); }
 </form>
