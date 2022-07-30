@@ -3,16 +3,21 @@
 @{
     ViewData["Title"] = ProjectResources["Delete"];
 }
+@section BootstrapSelectStyles {
+    <!--bootstrap-select-->
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+}
+<h2>@ProjectResources["Delete"]</h2>
 
-<h2>Delete</h2>
-
-<h4>Delete : @Model.Name</h4>
+<h4>@ProjectResources["Delete"] : @Model.Name</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Delete">
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ImageName" />
+            <input type="hidden" asp-for="CvName" />
             @{ await Html.RenderPartialAsync("~/Views/Partials/Employee/DeleteDatails.cshtml"); }
 
             <div class="form-group">

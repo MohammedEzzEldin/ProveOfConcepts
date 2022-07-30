@@ -23,12 +23,13 @@ namespace POVs.BL.Repository
            await db.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int employeeId)
+        public async Task DeleteAsync(Employee employee)
         {
-            var data = await db.Employees.FindAsync(employeeId);
+            //var data = await db.Employees.FindAsync(employeeId);
             //db.Remove(data);
-            data.IsDeleted = true;
-            data.DeleteDate = DateTime.Now;
+            //data.IsDeleted = true;
+            //data.DeleteDate = DateTime.Now;
+            db.Employees.Remove(employee);
             await db.SaveChangesAsync();
         }
 

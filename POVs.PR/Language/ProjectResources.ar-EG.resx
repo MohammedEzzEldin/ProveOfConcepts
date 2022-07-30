@@ -228,6 +228,9 @@
   <data name="Name Required" xml:space="preserve">
     <value>الاسم مطلوب</value>
   </data>
+  <data name="NoFileExist" xml:space="preserve">
+    <value>لا يوجد ملف</value>
+  </data>
   <data name="Notes" xml:space="preserve">
     <value>ملاحظات</value>
   </data>

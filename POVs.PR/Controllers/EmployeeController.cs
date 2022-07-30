@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using POVs.BL.Class;
+using POVs.BL.Helper;
 using POVs.BL.Interface;
 using POVs.BL.ModelView;
 using POVs.DAL.Entity;
@@ -72,37 +74,32 @@ namespace POVs.PR.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // catch folder path
-                    string ImagePath = Directory.GetCurrentDirectory() + @"\wwwroot\Files\Imgs";
-                    string CvPath = Directory.GetCurrentDirectory() + @"\wwwroot\Files\Docs";
+                    string ImageNameOrErrorMsg = string.Empty;
+                    string CvNameOrErrorMsg = string.Empty;
+                    bool IsVal;
 
-                    // catch file name
-                    //GUID => Word of 36 characters
-                    // CCEMWCLMELCKM..pdf
-                    if (emp.Image != null)
+                    ImageNameOrErrorMsg = FileUploader.UploadFile(Constant.ImgsFolder,emp.Image,out IsVal);
+                   
+                    if(IsVal)
                     {
-                        emp.ImageName = Guid.NewGuid() + Path.GetFileName(emp.Image.FileName);
-
-                        //catch final path
-                        string ImageDestPath = Path.Combine(ImagePath, emp.ImageName);
-
-                        // save the files
-                        using (var ImageStream = new FileStream(ImageDestPath, FileMode.Create))
-                        {
-                            emp.Image.CopyTo(ImageStream);
-                        }
+                        emp.ImageName = ImageNameOrErrorMsg;
+                    }
+                    else
+                    {
+                        throw new Exception(ImageNameOrErrorMsg);
                     }
 
-                    if (emp.Cv != null)
+                    IsVal = false;
+
+                    CvNameOrErrorMsg = FileUploader.UploadFile(Constant.DocsFolder,emp.Cv,out IsVal);
+
+                    if (IsVal)
                     {
-                        emp.CvName = Guid.NewGuid() + Path.GetFileName(emp.Cv.FileName);
-
-                        string CvDestPath = Path.Combine(CvPath, emp.CvName);
-
-                        using (var CvStream = new FileStream(CvDestPath, FileMode.Create))
-                        {
-                            emp.Cv.CopyTo(CvStream);
-                        }
+                        emp.CvName = CvNameOrErrorMsg;
+                    }
+                    else
+                    {
+                        throw new Exception(CvNameOrErrorMsg);
                     }
 
                     var data = mapper.Map<Employee>(emp);
@@ -132,6 +129,34 @@ namespace POVs.PR.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    string ImageNameOrErrorMsg = string.Empty;
+                    string CvNameOrErrorMsg = string.Empty;
+                    bool IsVal;
+
+                    ImageNameOrErrorMsg = FileUploader.UploadFile(Constant.ImgsFolder, emp.Image, out IsVal);
+
+                    if (IsVal)
+                    {
+                        emp.ImageName = ImageNameOrErrorMsg;
+                    }
+                    else
+                    {
+                        throw new Exception(ImageNameOrErrorMsg);
+                    }
+
+                    IsVal = false;
+
+                    CvNameOrErrorMsg = FileUploader.UploadFile(Constant.DocsFolder, emp.Cv, out IsVal);
+
+                    if (IsVal)
+                    {
+                        emp.CvName = CvNameOrErrorMsg;
+                    }
+                    else
+                    {
+                        throw new Exception(CvNameOrErrorMsg);
+                    }
+
                     var data = mapper.Map<Employee>(emp);
                     await employee.UpdateAsync(data);
                     return RedirectToAction("Index");
@@ -155,24 +180,30 @@ namespace POVs.PR.Controllers
         }
         [HttpPost]
         [ActionName("Delete")]
-        public async Task<IActionResult> ConfirmDelete(int id)
+        public async Task<IActionResult> ConfirmDelete(EmployeeVM emp)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    await employee.DeleteAsync(id);
+                    string SubPath = FileUploader.GetFullPath(Directory.GetCurrentDirectory(), Constant.WwwrootFilePath);
+                    string ImagePath = FileUploader.GetFullPath(SubPath, Constant.ImgsFolder, emp.ImageName);
+                    string CvPath = FileUploader.GetFullPath(SubPath, Constant.DocsFolder, emp.CvName);
+                    FileUploader.RemoveFile(ImagePath);
+                    FileUploader.RemoveFile(CvPath);
+                    var result = mapper.Map<Employee>(emp);
+                    await employee.DeleteAsync(result);
                     return RedirectToAction("Index");
                 }
             }
             catch (Exception ex)
             {
                 TempData["error"] = ex.Message;
-                var data = await employee.GetByIdAsync(emp => emp.Id == id);
-                ViewBag.DepartmentsList = await GetDepartmentsListAsync(data.DepartmentId);
+                //var data = await employee.GetByIdAsync(emp => emp.Id == id);
+                ViewBag.DepartmentsList = await GetDepartmentsListAsync(emp.DepartmentId);
             }
             //ModelState.Clear();
-            return RedirectToAction("Delete", new { id });
+            return RedirectToAction("Delete", new { id = emp.Id });
         }
         #endregion
 

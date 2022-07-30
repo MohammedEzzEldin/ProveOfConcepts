@@ -73,37 +73,44 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                <tr>
-                                    <th scope="row">@item.Id</th>
-                                    <td>@item.Name</td>
-                                    <td>@item.Salary</td>
-                                    <td>
-                                        <img src="~/Files/Imgs/@item.ImageName" height="70" width="70" />
-                                    </td>
-                                    <td>
-                                        @*<img src="~/Files/Docs/@item.CvName"  height="70" width="70" />*@
-                                    </td>
-                                    <td>@item.HireDate.ToString("dd/MM/yyyy")</td>
-                                    <td>@item.Department.Name</td>
-                                    <td>
-                                        @{
-                                            if (item.District != null)
-                                                @item.District.Name
-                                        }
-                                    </td>
+                                    <tr>
+                                        <th scope="row">@item.Id</th>
+                                        <td>@item.Name</td>
+                                        <td>@item.Salary</td>
+                                        <td>
+                                            <img src="~/Files/Imgs/@item.ImageName" height="70" width="70" />
+                                        </td>
+                                        <td>
+                                            @if (!String.IsNullOrEmpty(item.CvName))
+                                            {
+                                                <a href="~/Files/Docs/@item.CvName" download="Cv of @item.Name">Download Cv</a>
+                                            }
+                                            else
+                                            {
+                                                @ProjectResources["NoFileExist"]
+                                            }
+                                        </td>
+                                        <td>@item.HireDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.Department.Name</td>
+                                        <td>
+                                            @{
+                                                if (item.District != null)
+                                                    @item.District.Name
+                                            }
+                                        </td>
 
 
 
-                                    <td>
-                                        <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">@ProjectResources["Details"]</a>
-                                    </td>
-                                    <td>
-                                        <a asp-controller="Employee" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">@ProjectResources["Update"]</a>
-                                    </td>
-                                    <td>
-                                        <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">@ProjectResources["Delete"]</a>
-                                    </td>
-                                </tr>
+                                        <td>
+                                            <a asp-controller="Employee" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">@ProjectResources["Details"]</a>
+                                        </td>
+                                        <td>
+                                            <a asp-controller="Employee" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">@ProjectResources["Update"]</a>
+                                        </td>
+                                        <td>
+                                            <a asp-controller="Employee" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">@ProjectResources["Delete"]</a>
+                                        </td>
+                                    </tr>
                                 }
                             </tbody>
                         </table>

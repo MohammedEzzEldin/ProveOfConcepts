@@ -13,6 +13,6 @@ namespace POVs.BL.Interface
         Task<IEnumerable<Employee>> SearchAsync(Expression<Func<Employee, bool>> filter);
         Task CreateAsync(Employee employee);
         Task UpdateAsync(Employee employee);
-        Task DeleteAsync(int employeeId);
+        Task DeleteAsync(Employee employee);
     }
 }
