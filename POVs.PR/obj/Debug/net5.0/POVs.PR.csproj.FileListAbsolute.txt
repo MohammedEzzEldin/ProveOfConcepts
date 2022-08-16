@@ -176,3 +176,15 @@ F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcept
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\ref\POVs.PR.dll
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.pdb
 F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\POVs.PR.genruntimeconfig.cache
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Account\Registerationcshtml.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Shared\_AccountLayout.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Account\ConfirmForgetPassword.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Account\ConfirmResetPassword.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs

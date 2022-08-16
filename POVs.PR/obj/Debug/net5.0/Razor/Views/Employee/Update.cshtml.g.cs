@@ -21,27 +21,34 @@ using POVs.BL.ModelView;
 #nullable disable
 #nullable restore
 #line 2 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
-using POVs.BL.Interface;
+using POVs.BL.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
-using Microsoft.Extensions.Localization;
+using POVs.BL.Interface;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
+using Microsoft.Extensions.Localization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\_ViewImports.cshtml"
 using POVs.PR.Language;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"652a94e193bde5c52d293a95b90cebdffc737384", @"/Views/Employee/Update.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"29aab9fc94f161ec8e66accfc92a21c570d05b51", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d2f1431fee911dfd7f2bce8cd47e272bdb756bc7", @"/Views/_ViewImports.cshtml")]
     public class Views_Employee_Update : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<EmployeeVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Employee", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -82,7 +89,7 @@ using POVs.PR.Language;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"block-header\">\r\n    <h2>Update Employee</h2>\r\n</div>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "652a94e193bde5c52d293a95b90cebdffc7373845558", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "652a94e193bde5c52d293a95b90cebdffc7373845793", async() => {
                 WriteLiteral("\r\n");
 #nullable restore
 #line 14 "F:\Development\My Projects\Dot Net Projects\Dot Net Core Projects\ProveOfConcepts\ProveOfConcepts\POVs.PR\Views\Employee\Update.cshtml"

@@ -1,0 +1,57 @@
+﻿@model RegisterationVM
+@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<form id="sign_up" method="POST" asp-controller="Account" asp-action="Registration">
+    <div class="msg">Register a new membership</div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">person</i>
+        </span>
+        <div class="form-line">
+            <input type="text" class="form-control" asp-for="UserName" placeholder="Name Surname" required autofocus>
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">email</i>
+        </span>
+        <div class="form-line">
+            <input type="email" class="form-control" asp-for="Email" placeholder="Email Address" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">lock</i>
+        </span>
+        <div class="form-line">
+            <input type="text" class="form-control" asp-for="Password" minlength="6" placeholder="Password" required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">lock</i>
+        </span>
+        <div class="form-line">
+            <input type="text" class="form-control" asp-for="ConfirmPassword" minlength="6" placeholder="Confirm Password" required>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" asp-for="IsAgree" class="filled-in chk-col-pink">
+        <label asp-for="IsAgree">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
+    </div>
+
+    <input type="submit" value="SIGN UP" class="btn btn-block btn-lg bg-pink waves-effect" />
+
+    <div class="m-t-25 m-b--5 align-center">
+        <a asp-controller="Account" asp-action="Login">You already have a membership?</a>
+    </div>
+</form>
